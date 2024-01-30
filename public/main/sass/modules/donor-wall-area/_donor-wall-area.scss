@@ -1,0 +1,171 @@
+.donor-wall-area{
+    &.style-1{
+        position: relative;
+        .feature-icon1{
+            position: absolute;
+            top:0;
+            left: 0;
+            margin-top:87px;
+            margin-left: 29px;
+            width: 250px;
+            height: 164px;
+            z-index: 10;
+            i{
+                color: $black-2;
+                font-size: 164px;
+            }
+            @include rmaxwd(1600){
+                margin-top: 10px;
+                margin-left: 20px;
+                i{
+                    font-size: 100px;
+                }
+                img{
+                    width: 100px;
+                }
+            }
+        }
+        .feature-icon2{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin-bottom: 225px;
+            margin-right: 104px;
+            width: 146px;
+            height: 57px;
+            z-index: 10;
+            i{
+                color: $black-2;
+                font-size: 57px;
+            }
+            @include rmaxwd(1822){
+                width: 100px;
+                margin-bottom: 80px;
+                margin-right: 40px;
+                
+            }
+        }
+        .donor-profile{
+            padding: 32px 0px;
+            background-color: $white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            position: relative;
+            z-index: 20;
+            .image-wrapper{
+                overflow: hidden;
+                border-radius: 100px;
+                width: 120px;
+                height: 120px;
+                img{
+                   width: 100%;
+                   height: 100%; 
+                }
+                &:hover{
+                    img{
+                        transform: scale(1.03);
+                        @include transition;
+                    }
+                }
+            }
+            .donor-details{
+                margin-top:16px ;
+                .name{
+                    text-align: center;
+                    font-family: $heading-font;
+                    color: $black-2;
+                    font-size: 18px;
+                    font-style: normal;
+                    letter-spacing: 0.36px;
+                }
+                p{
+                    text-align: center;
+                    font-family: $body-font;
+                    color: $brand;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%; 
+                    letter-spacing: 0.28px;
+                    cursor: default;
+                }
+            }
+            .divider{
+                background-color: $gray-4;
+                height: 1px;
+                width: 100%;
+                margin: 16px 0px;
+            }
+            .donate-amount{
+                p{
+                    text-align: center;
+                    font-family: $body-font;
+                    color: $black-3;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 170%;
+                    letter-spacing: 0.32px;
+                    cursor: default;
+                }
+                h5{
+                    text-align: center;
+                    font-family: $heading-font;
+                    color: $black-2;
+                    font-size: 22px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 140%; 
+                    letter-spacing: 0.44px;
+                    cursor: default;
+                }
+            }
+            .button{
+                position: relative;
+                margin-top: 32px;
+                display: flex;
+                width: 64px;
+                height: 64px;
+                padding: 16px 24px;
+                justify-content: center;
+                align-items: center;
+                background-color: $gray-5;
+                border-radius: 100px;
+                overflow: hidden;
+                transition: 0.3s;
+                z-index: 99;
+                i{
+                    font-size: 24px;
+                    color: $black-2;
+                    @include transition;
+                    margin-left: 0px;
+                }
+                &:before {
+                    position: absolute;
+                    width: 0;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    background: $brand;
+                    content: "";
+                    @include transition;
+                    z-index: -1;
+                }
+                &:hover{
+                    @include transition;
+                    &:before {
+                        width: 100%;
+                        @include transition;
+                    }
+                    i{
+                        color: $white !important;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

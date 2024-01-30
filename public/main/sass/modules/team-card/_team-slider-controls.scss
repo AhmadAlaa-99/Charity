@@ -1,0 +1,79 @@
+.team-member-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 7px;
+  .slick-list {
+    padding-left:0px !important;
+    padding-right: 0px !important;
+    padding-bottom: 60px !important;
+
+    @include sm {
+      padding-bottom: 40px !important;
+      margin: unset;
+    }
+    .slick-slide {
+      margin: 0 12px;
+      @include rmaxwd(1199) {
+        margin: 0 14px;
+      }
+    }
+  }
+  
+  
+    .info-card-arrow-btn{
+      position: absolute;
+      bottom: 0;
+      background: transparent;
+      i{
+        color: $black;
+      }
+      &.prev-btn{
+          left: 50%;
+          line-height: 0px;
+          margin-left: -100px;
+      }
+      &.next-btn{
+        right: 50%;
+        line-height: 0px;
+        margin-right: -120px;
+      }
+    }
+  
+  // Slick Dots
+  .slick-dots {
+    // position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 32px;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 0;
+
+    li {
+      display: inline-block;
+      line-height: 0;
+      border-radius: 50px;
+      @include transition;
+
+      button {
+        font-size: 0;
+        padding: 0;
+        width: 8px;
+        height: 8px;
+        background-color:$gray-4;
+        border-radius: 50px;
+        position: relative;
+        @include transition;
+      }
+      &.slick-active {
+        @include transition;
+        button {
+          @include transition;
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.header-area {
+     &.style-4{
+        background: transparent;
+        @include rmaxwd(992){
+            position: relative;
+            .custom-container{
+                margin: 0px !important;
+            }
+        }
+        .main-menu{
+            ul{
+                li{
+                    a{
+                        color: $black-2;
+                    }
+                    &.active{
+                        >a{
+                            color: $brand;
+                        }
+                    }
+                }
+            }
+        }
+        .header-top{
+            border-bottom: none;
+            &.style-2{
+                .header-top-inner{
+                padding: 0;
+                }
+            }
+        }
+        .header-menu-area{
+            .header-menu-area-inner{
+                background-color: $white;
+                border-radius: 10px;
+                @include rmaxwd(992){
+                    border-radius: 0px !important;
+                }
+            }
+        }
+        .submenu{
+            li{
+                color: $black-2;
+                border-bottom: 1px solid transparent;
+                &:hover{
+                    @include transition;
+                    border-color: transparent !important;
+                    background-color: #ffbeb9 !important;
+                    a{
+                        color: $black-2 !important;
+                    }
+                }
+            }
+        }
+    }
+}

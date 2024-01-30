@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?qyouca');
+  src:  url('../fonts/icomoon.eot?qyouca#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?qyouca') format('truetype'),
+    url('../fonts/icomoon.woff?qyouca') format('woff'),
+    url('../fonts/icomoon.svg?qyouca#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-calendar:before {
+  content: "\e90c";
+}
+.icon-calendar-bold:before {
+  content: "\e90d";
+}
+.icon-comments:before {
+  content: "\e913";
+}
+.icon-dollar:before {
+  content: "\e914";
+}
+.icon-house-blank:before {
+  content: "\e91a";
+}
+.icon-location-bold:before {
+  content: "\e924";
+}
+.icon-messages:before {
+  content: "\e928";
+}
+.icon-phone:before {
+  content: "\e92b";
+}
+.icon-share:before {
+  content: "\e936";
+}
+.icon-star:before {
+  content: "\e937";
+}
+.icon-ambulance:before {
+  content: "\e93e";
+}
+.icon-raise-hand:before {
+  content: "\e93f";
+}
+.icon-scholarship:before {
+  content: "\e940";
+}
+.icon-globe:before {
+  content: "\e941";
+}
+.icon-holding-hand:before {
+  content: "\e942";
+}
+.icon-donate:before {
+  content: "\e943";
+}
+.icon-food-basket:before {
+  content: "\e944";
+}
+.icon-family-home:before {
+  content: "\e945";
+}
+.icon-shelter:before {
+  content: "\e946";
+}
+.icon-donation:before {
+  content: "\e947";
+}
+.icon-shelter-small:before {
+  content: "\e948";
+}
+.icon-gift-box:before {
+  content: "\e949";
+}

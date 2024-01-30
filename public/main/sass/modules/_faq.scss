@@ -1,0 +1,81 @@
+// FAQ Area
+.faq-area{
+    padding: 120px 0px;
+    position: relative;
+    @include md{
+        padding: 100px 0;
+    }
+    @include sm {
+        padding: 80px 0px;
+    }
+    .feature-shape{
+        position: absolute;
+        top: -60px;
+        right: 0;
+        z-index: 20;
+        
+        @include rmaxwd(1500){
+            width: 320px;
+        }
+        @include rmaxwd(765){
+            width: 160px;
+            top: -30px;
+            animation: MoveUpDown 2s linear infinite alternate;
+        }
+        
+    }
+    .feature-shape2{
+        position: absolute;
+        width: 250px;
+        height: 164px;
+        top: 0;
+        margin-top: 159px;
+        left: 0px;
+        margin-left: 196px;
+        @include rmaxwd(1533){
+            width: 140px;
+            height: 80px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+         @include rmaxwd(452){
+            display: none;
+        }
+    }
+    .feature-shape3{
+        position: absolute;
+        right: 0;
+        margin-right: 250px;
+        width: 169px;
+        height: 169px;
+        bottom: 0;
+        margin-bottom: 109px;
+        animation: none !important;
+        @include rmaxwd(1557){
+            right:0;
+            width: 100px;
+            height: 100px;
+            margin-right: 50px;
+            margin-bottom: 10px;
+        }
+        @include rmaxwd(1000){
+            right:0;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        @include sm{
+            // animation: rotate 4s infinite alternate;
+        }
+    }
+    .section-title{
+        text-align: center;
+        .short-title{
+            color: $brand;
+        }
+        .title{
+            margin-bottom: 64px;
+        }
+    }
+}

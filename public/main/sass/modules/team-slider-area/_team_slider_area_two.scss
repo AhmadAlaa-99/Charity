@@ -1,0 +1,171 @@
+.team-slider-area{
+    position: relative;
+    overflow: hidden;
+    &.style-2{
+        background: $sky-color-2 !important;
+        padding: 120px 0px;
+        padding-bottom: 232px;
+        @include md{
+            padding: 100px 0;
+            padding-bottom: 200px;
+        }
+        @include sm{
+            padding: 72px 0px;
+            padding-bottom: 192px;
+        }
+        .feature-shape{
+            position: absolute;
+            top: 180px;
+            left: 121px;
+            @include lg{
+                top: 10px;
+                width: 100px;
+                left: 0px;
+            }
+            @include md{
+                top: 10px;
+                width: 100px;
+                left: 0px;
+            }
+            @include sm{
+                top: 10px;
+                width: 80px;
+                left: 0px;
+            }
+        }
+        .feature-shape2{
+            position: absolute;
+            right: 77px !important;
+            bottom: 340px !important;
+            margin: 0 !important;
+            top: auto;
+             @include lg{
+                display: none;
+            }
+            @include md{
+                display: none;
+            }
+            @include sm{
+                display: none;
+            }
+        }
+        .section-title{
+            align-items: center;
+            text-align: center;
+            padding-bottom: 64px;
+            .title{
+                width: 743px;
+                @include rmaxwd(1400){
+                    width: auto;
+                }
+            }
+        }
+        .team-member-card{
+            background-color: $gray-5;
+            border-radius: 20px;
+            .content{
+               background-color: $white;
+                border-radius: 40px 40px 40px 0px;
+                .social-profile-link{
+                    background-color: $secondary-color;
+                    i{
+                        color: $white !important;
+                    }
+                    &:hover{
+                        .fa-times{
+                            display: block;
+                        }
+                        .fa-plus{
+                            display: none;
+                        }
+                        .social {
+                        .social-inner {
+                                margin-left: 0;
+                                transition: all 0.5s ease-out;
+                                display: flex;
+                                align-items: center;
+                                gap: 17px;
+                                padding-left: 25px;
+                                @include transition;
+                                i{
+                                color: $white;
+                                }
+                        }
+                        }
+                    }
+                }
+            }
+            &:hover{
+                .content {
+                    background-color: rgba(255, 225, 68, 0.800000011920929);
+                    .title,
+                    p{
+                    @include transition;
+                    color:$black-2!important;
+                    }
+                }
+                .social-profile-link{
+                    
+                        .fa-times{
+                            display: block;
+                        }
+                        .fa-plus{
+                            display: none;
+                        }
+                        .social {
+                        .social-inner {
+                                margin-left: 0;
+                                transition: all 0.5s ease-out;
+                                display: flex;
+                                align-items: center;
+                                gap: 17px;
+                                padding-left: 25px;
+                                @include transition;
+                                i{
+                                color: $white;
+                                }
+                        }
+                        }
+                }
+            }
+        }
+        .slick-center{
+            .team-member-card{
+                .content-wrapper {
+                .content {
+                    background-color: rgba(255, 225, 68, 0.800000011920929);
+                    .title,
+                    p{
+                    @include transition;
+                    color:$black-2!important;
+                    }
+                    .social-profile-link{
+                    .fa-times{
+                            display: block;
+                        }
+                        .fa-plus{
+                            display: none;
+                        }
+                        .social {
+                        .social-inner {
+                                margin-left: 0;
+                                transition: all 0.5s ease-out;
+                                display: flex;
+                                align-items: center;
+                                gap: 17px;
+                                padding-left: 25px;
+                                @include transition;
+                                i{
+                                color: $white;
+                                }
+                        }
+                        }
+                    }
+                }
+                }
+
+            }
+        }
+
+    }
+}

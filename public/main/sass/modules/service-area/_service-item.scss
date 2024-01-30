@@ -1,0 +1,88 @@
+.service-item{
+    position: relative;
+    display: flex;
+    z-index: 20;
+    .icon{
+        img{
+            width: 150px;
+            height: auto;
+            // @include transition;
+        }
+    }
+    .divider {
+        position: relative;
+        height: 100%;
+        margin-top: 7px;
+        @include transition;
+        .outline{
+            height: 50px;
+            width: 2px;
+            background-color: $gray-400;
+            margin: 0px 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .inner-line{
+                height: 20px;
+                padding: 2px;
+                background-color: $secondary-color;
+                margin: 0px 24px;
+                @include transition;
+            }
+        }
+    }
+    .service-content{
+        .title{
+            color: $black-2;
+            font-family: $heading-font;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%; /* 30.8px */
+            letter-spacing: 0.44px;
+            @include transition;
+            @extend.animated-text-green;
+            cursor: default;
+        }
+        .decs{
+            margin-top: 16px;
+            font-family: $body-font;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 170%; /* 27.2px */
+            letter-spacing: 0.32px;
+            color: $black-3;
+            cursor: default;
+        }
+    }
+    &:hover{
+        .divider {
+            @include transition;
+            .outline{
+                .inner-line{
+                    @include transition;
+                    height: 50px;
+                    border-radius: 50px;
+                }
+            }
+        }
+        .icon{
+            img{
+                transform: rotateY(360deg);
+                @include transition;
+            }
+        }
+        .service-content{
+            .title{
+                @include transition;
+                &.animated-text-green{
+                    background-position: -100%;
+                }
+                &.animated-text-red{
+                    background-position: -100%;
+                }
+            }
+        }
+    }
+}

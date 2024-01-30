@@ -1,0 +1,67 @@
+.blog-area{
+    &.style-1{
+        position: relative;
+        background-color: $white;
+        overflow: hidden;
+        .shape-1{
+            position: absolute;
+            top: 55%;
+            left: 132px;
+            @include rmaxwd(1845){
+                top: 1%;
+                left: 20px;
+                width: 120px;
+            }
+            @include rmaxwd(767){
+                display: none;
+            }
+        }
+        .shape-2{
+            position: absolute;
+            bottom: 165px;
+            left: 100px;
+            @include rmaxwd(992){
+                display: none;
+            }
+        }
+        .shape-3{
+            position: absolute;
+            top: 338px;
+            right: 216px;
+            z-index: 20;
+            @include rmaxwd(1625){
+                top: 10px;
+                right: 20px;
+                height: 160px;
+            }
+            @include rmaxwd(433){
+                height: 100px;
+            }
+        }
+        .shape-4{
+            position: absolute;
+            bottom: 227px;
+            right: 205px;
+            z-index: 0;
+            @include rmaxwd(1680){
+                bottom: 20px;
+                right: 20px;
+                width: 120px;
+            }
+            @include rmaxwd(610){
+                width: 80px;
+                animation: rotating 12s linear infinite;
+            }
+        }
+        .section-title{
+            width: 442px;
+            margin-bottom: 193px;
+            @include rmaxwd(1400){
+                width: auto;
+            }
+            @include rmaxwd(992){
+                margin-bottom: 32px;
+            }
+        }
+    }
+}

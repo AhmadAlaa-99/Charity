@@ -1,0 +1,69 @@
+.icon-card {
+    display: flex;
+    background: $white;
+    flex-direction: row;
+    gap: 40px;
+    margin-bottom: 36px;
+    border-radius: 20px;
+
+    @include sm {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    &:hover {
+        .icon {
+            img {
+                transform: rotateY(360deg);
+                @include transition;
+            }
+        }
+    }
+    .icon {
+        position: relative;
+        width: 78px;
+        height: 78px;
+        display: flex;
+        z-index: 99;
+        overflow: hidden;
+        img {
+            width: 100%;
+            @include transition;
+        }
+    }
+    .content {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+
+        @include sm {
+            gap: 15px;
+        }
+        .title {
+            font-family: $heading-font;
+            color: $black-2;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 130%;
+            letter-spacing: 0.56px;
+            cursor: default;
+            @extend .animated-text-red;
+        }
+        .desc {
+            font-family: $body-font;
+            color: $black-3;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 170%; 
+            letter-spacing: 0.36px;
+             @extend .animated-text-red;
+            a {
+                color: $text-color;
+            }
+        }
+    }
+    
+}

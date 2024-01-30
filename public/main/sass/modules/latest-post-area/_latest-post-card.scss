@@ -1,0 +1,97 @@
+.latest-post-card{
+                background: $white;
+                border-radius: 30px 30px 30px 0px;
+                padding: 8px;
+                &:hover{
+                    img{
+                        transform: scale(1.03);
+                        @include transition;
+                    }
+                }
+                .img-wrapper{
+                     width: 100%;
+                    border-radius: 30px 30px 30px 0px;
+                    overflow: hidden;
+                    img{
+                        @include transition;
+                        width: 100%;
+                        border-radius: 30px 30px 30px 0px;
+                    }
+                    
+                }
+                
+               .card-wrapper-content{
+                padding: 0px 16px;
+                    .title{
+                        padding-top: 40px;
+                        font-family: $heading-font;
+                        font-size: 22px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 140%;
+                        letter-spacing: 0.44px;
+                        color: $black-2;
+                        @extend .animated-text-green;
+                    }
+                    .desc{
+                        padding-top: 16px;
+                        font-family:$body-font;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 170%;
+                        letter-spacing: 0.32px;
+                        color: $black-3;
+                         cursor: default;
+                    }
+                    a{
+                        margin: 32px 0px;
+                    }
+                    .theme-btn{
+                        &.style-5{
+                            &:hover{
+                                color: $white !important;
+                                background-color: $gray-5 !important;
+                            }
+                        }
+                    }
+                    .divider{
+                        height: 1px;
+                        margin-bottom: 32px;
+                        background: $gray-6;
+                    }
+                    .comment-bar{
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px 32px;
+                        padding-bottom: 16px;
+                        a{
+                            margin: 0px;
+                        }
+                        .single-item{
+                            display: flex;
+                            align-items: center;
+                            i{
+                                font-size: 16px;
+                                color: $secondary-color;
+                                margin-right: 8px;
+                            }
+                            span{
+                                font-family:$body-font;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 150%; 
+                                letter-spacing: 0.28px;
+                                color: $black-3;
+                            }
+                            &:hover{
+                                span{
+                                    color: $secondary-color;
+                                }
+                            }
+                        }
+                        
+                    }
+               }
+}

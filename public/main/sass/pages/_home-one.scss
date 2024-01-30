@@ -1,0 +1,178 @@
+// Feature Area
+.feature-area {
+  &.style-1 {
+    margin-top: -166px;
+    padding-bottom: 30px;
+    background-color: $gray-5;
+    @include rmaxwd(1199) {
+      margin-top: -100px;
+    }
+    @include sm {
+      padding-top: 70px !important;
+    }
+    .feature-area-wrapper {
+      position: relative;
+
+      @include rmaxwd(991) {
+        padding: 0;
+      }
+      @include sm {
+        box-shadow: none;
+      }
+      @include md {
+        box-shadow: none;
+      }
+    }
+  }
+}
+// About Us Area
+.about-us-area {
+    &.style-1 {
+      padding: 120px 0px;
+      background-color: $gray-5;
+      @include md{
+        padding: 100px 0;
+      }
+      @include sm{
+        padding: 80px 0px;
+      }
+      .about-info-card {
+        .about-info-content {
+          padding-left: 110px;
+
+          @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+            padding-left: 70px;
+          }
+
+          @include rmaxwd(1199) {
+            padding-left: 0;
+            padding-top: 160px;
+          }
+          @include rmaxwd(767) {
+            padding-top: 150px;
+          }
+          @include rmaxwd(650) {
+            padding-top: 100px;
+          }
+        }
+      }
+    }
+}
+// Counter Area
+.counter-area{
+  &.style-1{
+     padding-bottom: 120px !important;
+     overflow: hidden;
+      @include md {
+        padding: 100px 0 !important;
+      }
+      @include sm{
+        padding: 80px 0px !important;
+      }
+    .feature-image2{
+      top: unset;
+      left: unset;
+      bottom: 16px;
+      right: 37px;
+      @include rmaxwd(880){
+        bottom: 6px;
+        width: 80px;
+        right: 6px;
+      }
+    }
+  }
+}
+// Causes-area
+.causes-area{
+  &.style-1{
+    padding-top: 120px;
+    padding-bottom: 232px;
+     @include md() {
+        padding-top: 100px;
+        padding-bottom: 220px;
+      }
+      @include sm() {
+        padding-top: 80px;
+        padding-bottom: 200px;
+      }
+  }
+}
+// Donate-area
+.donate-area{
+  &.style-1{
+    .donate-form{
+      margin-top: -290px;
+    }
+  }
+}
+// Event Area
+.event-area{
+  &.style-1{
+    padding: 120px 0;
+     @include md{
+        padding: 100px 0;
+      }
+      @include sm{
+        padding: 80px 0px;
+      }
+    .section-title{
+      .short-title{
+        color: $brand;
+      }
+    }
+  }
+}
+// Testimonial-area style-1
+.testimonial-slider-area{
+  &.style-1{
+    padding: 120px 0px;
+    position: relative;
+    overflow: hidden;
+    @include md{
+      padding-top: 100px;
+      padding-bottom: 170px;
+    }
+    @include sm{
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    .shape-1{
+      position: absolute;
+      top: 46px;
+      left: 70px;
+      @include rmaxwd(1100){
+        top: 15px;
+        left: 30px;
+        width: 140px;
+      }
+    }
+    .shape-2{
+      position: absolute;
+      bottom: 84px;
+      left: 98px;
+      // animation: move2 2s infinite alternate;
+      @include rmaxwd(1100){
+        bottom: 10px;
+        left: 20px;
+        width: 80px;
+      }
+      @include sm{
+        animation: move2 2s infinite alternate;
+      }
+    }
+    .shape-3{
+      position: absolute;
+      bottom: 28px;
+      right: 126px;
+      @include rmaxwd(1100){
+        right: 20px;
+        width: 60px;
+        bottom: 10px;
+      }
+      @include sm{
+          animation: rotating 12s linear infinite;
+      }
+    }
+    
+  }
+}

@@ -1,0 +1,48 @@
+.accordion-wrapper {
+  &.style-two {
+    .accordion-list-item {
+      .accordion-head {
+
+        .accordion-title {
+          font-size: 24px;
+
+          @include sm {
+            font-size: 20px;
+          }
+        }
+
+        &:after {
+          color: $black-2;
+          font-size: 12px;
+          border-radius: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 24px;
+          height: 24px;
+          flex-shrink: 0;
+        }
+        &.collapsed {
+          &:after {
+            border-radius: 50px;
+            color: $black-2;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+          }
+        }
+      }
+      &:last-child {
+        border-bottom: 1px solid #C7C7E1FF;
+      }
+      .show.accordion-item-body {
+        padding-bottom: 20px;
+        @include transition;
+      }
+    }
+  }
+}

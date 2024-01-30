@@ -1,0 +1,179 @@
+.counter-container-wrapper{
+    position: relative;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include sm{
+        row-gap: 34px;
+        flex-wrap: wrap;
+    }
+    .divider{
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .outline{
+            position: absolute;
+            background-color:$primary-color;
+            width: 1px;
+            height: 100px;
+            @include sm{
+                display: none;
+            }
+        }
+        &.style-2{
+            @include sm{
+                display: none;
+            }
+        }
+    }
+    .single-counter{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include sm{
+            width: 44%;
+        }
+        .counter-icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 64px;
+            height: 64px;
+            padding-bottom: 10px;
+        } 
+        .counter-inner{
+            position: relative;
+            height: 66px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: $heading-font;
+            font-size: 51px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 130%;
+            letter-spacing: 1.02px;
+            color: $white;
+            margin-bottom: 7px;
+            @include sm{
+                font-size: 32px;
+            }
+            .counter{
+                color: $white;
+                font-size: 51px;
+                cursor: default;
+                @include sm{
+                    font-size: 32px;
+                }
+            }
+            span{
+                @include sm{
+                    font-size: 32px;
+                }
+            }            
+        }
+        .title{
+            text-align: center;
+            font-family:$body-font;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 170%;
+            letter-spacing: 0.4px; 
+            color: $white;
+            cursor: default;
+        }
+        &:hover{
+            img{
+                transform: rotateY(360deg);
+                @include transition;
+            }
+        }
+    }
+}
+.counter-area{
+    &.style-2{
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            &:after {
+                content: "";
+                background: $black-2;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                opacity:.6;
+            }
+            .feature-image1{
+                position: absolute;
+                z-index: 20;
+                top: 74px;
+                left: 72px;
+                fill: $white;
+                @include rmaxwd(1600){
+                    top: 20px;
+                    left: 20px;
+                    width: 120px;
+                }
+                @include sm{
+                    animation: beat 1.4s infinite alternate;
+                }
+            }
+            .feature-image2{
+                position: absolute;
+                z-index: 20;
+                bottom: 142px;
+                right: 62px;
+                fill: $white;
+                @include sm{
+                    right: 20px;
+                    animation: rotating 12s linear infinite;
+                }
+            }
+            
+    }
+    &.style-3{
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            &:after {
+            content: "";
+            background: $black-2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity:.6;
+            }
+            .feature-image2{
+            position: absolute;
+            z-index: 20;
+            bottom: 23px;
+            right: 37px;
+            animation: rotate 4s infinite alternate;
+            @include rmaxwd(1237){
+                bottom: 0px;
+                right: 10px;
+                height: 80px;
+            }
+            }
+            
+    }
+}

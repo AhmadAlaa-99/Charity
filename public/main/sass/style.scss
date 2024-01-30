@@ -1,0 +1,221 @@
+/**
+ * Stylesheet:  style.css
+ * Theme:       Donik - Charity & Fundraising HTML5 Template
+ * Version:     1.0
+ * Author:     	BoomDevs
+ * 
+*/
+/* Table of contents
+=========================
+1. Preloader
+2. Scroll up
+3. Nav Menu
+4. Slider Section
+5. Info Card
+6. Icon Card
+7. About Image Card
+8. About Us Area
+9. Latest Post Area
+10. Video Popup Card
+11. Process Step Card
+12. Testimonial Card & Area
+13. Accordion Card
+14. Client Logo Card & Area
+15. Post Card
+16. Skill Progress Card
+17. Post Donation Form
+18. Nav Tabs
+19. Title Card
+20. Breadcrumb
+21. Pagination
+22. Team Slider
+23. Project Details Page
+24. Sidebar
+25. Comment List
+26. Comment Form
+27. Team Card
+28. Portfolio
+29. Counter Area
+30. Causes
+31. Service Area
+32. Animations
+33. Donation Area
+34. Donor Wall Area
+35. Event Slider
+36. Faq
+37. Notice Area
+38. Pages
+39. Blog Page
+40. Footer
+===========================*/
+/* Theme Default CSS */
+@import "variables";
+@import "mixin";
+@import "partials/theme-default";
+@import "partials/default-spacing";
+@import "unittest";
+@import "keyframes";
+@import "custom_font"; 
+
+// 1. Preloader
+@import "modules/preeloader";
+
+// 2. Scroll up
+@import "partials/scrollup";
+
+// 3. Nav Menu
+@import "partials/header";
+@import "partials/header-two";
+@import "partials/header-three";
+@import "partials/header-four";
+@import "modules/meanmenu";
+@import "partials/menu-sidebar";
+
+// 4. Slider Section
+@import "modules/slider/slider-default";
+@import "modules/slider/slider-style-one";
+@import "modules/slider/slider-style-two";
+@import "modules/slider/slider-style-three";
+@import "modules/slider/slider-controls";
+
+// 5. Info Card
+@import "modules/info-card/info-card";
+
+// 6. Icon Card
+@import "modules/icon-card/icon-card";
+@import "modules/icon-card/icon-card-two";
+
+// 7. About Image Card
+@import "modules/about-image-card/about-image-card";
+@import "modules/about-image-card/about-image-card-two";
+@import "modules/about-image-card/about-image-card-three";
+
+// 8. About Us Area
+@import "modules/about-us-area/about-us-area";
+@import "modules/about-us-area/about-us-area-one";
+@import "modules/about-us-area/about-us-area-two";
+@import "modules/about-us-area/about-us-area-three";
+
+// 9. Latest Post Area
+@import "modules/latest-post-area/latest-posts-area";
+@import "modules/latest-post-area/latest-post-card";
+
+// 10. Video Popup Card
+@import "modules/video-popup-card"; 
+
+// 11. Process Step Card
+@import "modules/process-step/process-step";
+@import "modules/testimonial/testimonial-card";
+
+// 12. Testimonial Card & Area
+@import "modules/testimonial/testimonial-card-two";
+@import "modules/testimonial/testimonial-card-three";
+@import "modules/testimonial/testimonial-slider-controls";
+@import "modules/testimonial/testimonial-area";
+
+// 13. Accordion Card
+@import "modules/accordion/accordion";
+@import "modules/accordion/accordion-style-two";
+
+// 14. Client Logo Card & Area
+@import "modules/client-area/client-area";
+
+// 15. Post Card
+@import "modules/post-card/post-card";
+
+// 16. Skill Progress Card
+@import "modules/skill-progress";
+
+// 17. Post Donation Form
+@import "modules/post-donation-form";
+
+// 18. Nav Tabs
+@import "modules/nav-tabs";
+
+// 19. Title Card
+@import "modules/title-section";
+
+// 20. Breadcrumb
+@import "modules/breadcrumb/breadcrumb";
+
+// 21. Pagination
+@import "modules/paginations";
+
+// 22. Team Slider
+@import "modules/team-slider-area/_team_slider_area";
+@import "modules/team-slider-area/team_slider_area_one";
+@import "modules/team-slider-area/team_slider_area_two";
+
+// 23. Project Details Page
+@import "modules/list-item";
+
+// 24. Sidebar
+@import "partials/sidebar";
+@import "partials/sidebar-two";
+
+// 25. Comment List
+@import "modules/comment-list";
+
+// 26. Comment Form
+@import "modules/comment-form";
+
+// 27. Team Card
+@import "modules/team-card/team-member-card";
+@import "modules/team-card/team-slider-controls";
+
+// 28. Portfolio
+@import "modules/portfolio/portfolio-two";
+@import "modules/portfolio/portfolio-slider-controls";
+@import "modules/portfolio/portfolio_slider1";
+
+// 29. Counter Area
+@import "modules/counter/counter-area"; 
+
+// 30. Causes
+@import "modules/causes-details/causes-details";
+@import "modules/causes-area/causes-slider";
+@import "modules/causes-area/causes-area"; 
+@import "modules/causes-area/causes-card";
+@import "modules/causes-area/causes-card-two";
+
+// 31. Service Area
+@import "modules/service-area/_service-item";
+@import "modules/service-area/service-area-one";
+@import "modules/service-area/service-area-two";
+@import "modules/service-area/service-area-three";
+
+// 32. Animations
+@import "modules/animations/animations";
+
+// 33. Donation Area
+@import "modules/donation-area/donation-area";
+@import "modules/donation-area/donation-details";
+
+// 34. Donor Wall Area
+@import "modules/donor-wall-area/donor-wall-area";
+
+// 35. Event Slider
+@import "modules/event-area/event_slider";
+@import "modules/event-details/event-details";
+@import "modules/event-area/event-area"; 
+@import "modules/event-area/event-card";
+@import "modules/event-area/event-single-card"; 
+
+// 36. Faq
+@import "modules/faq";
+
+// 37. Notice Area
+@import "modules/notice";
+
+// 38. Pages
+@import "pages/pages";
+
+// 39. Blog Page
+@import "modules/blog-details";
+@import "modules/blog-area/blog-area"; 
+@import "modules/blog-area/blog-card"; 
+
+// 40. Footer
+@import "partials/footer";
+@import "partials/footer-two";
+@import "partials/footer-three";

@@ -1,0 +1,85 @@
+.skill-progressbar{
+    &.page{
+        .progress-inner{
+            .title{
+                font-family: $body-font;
+                color: $black-3;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 170%; 
+                letter-spacing: 0.36px;
+                margin-top: 16px;
+            }
+            .price{
+                margin-top: 8px;
+                font-family: $heading-font;
+                color: $black-2;
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 140%; 
+                letter-spacing: 0.44px;
+            }
+            .progress-content-outter{
+                border-radius: 50px;
+                .progress-content{
+                    background: $brand;
+                    border-radius: 50px;
+                }
+            }
+        }
+    }
+}
+.page-area{
+    &.donation-details{
+        .post-content{
+            img{
+                border-radius: 10px !important;
+            }
+        }
+        .donor-author{
+            margin-top: 24px;
+            .single-card{
+                border-radius: 10px;
+                background: $white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 16px 0px;
+                img{
+                    width: 60px !important;
+                    height: 60px !important;
+                    border-radius: 100%;
+                    overflow: hidden;
+                }
+                .name,
+                .amount{
+                    margin-top: 16px;
+                    margin-bottom: 0px;
+                    font-family: $heading-font;
+                    color: $black-2;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 130%;
+                    letter-spacing: 0.36px;
+                    cursor: default;
+                }
+                .date{
+                    font-family: $body-font !important;
+                    color: $brand !important;
+                    font-size: 16px !important;
+                    font-style: normal !important;
+                    font-weight: 400 !important;
+                    line-height: 170%; 
+                    letter-spacing: 0.32px;
+                    margin: 0px !important;
+                    margin-top: 12px;
+                    cursor: default;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,279 @@
+.slider-bottom-shape {
+  position: relative;
+    img{
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      content: "";
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 100%;
+    }
+}
+.slider-area {
+ 
+ &.style-1{
+  button.slider-arrow-btn {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        transition: 0.3s;
+        z-index: 99;
+        background-color: transparent;
+        border: 1px solid $gray-300;
+        cursor: pointer;
+        top: 50%;
+        transform: translateY(-86%);
+        overflow: hidden;
+        display: block !important;
+        &:before {
+            position: absolute;
+            width: 0;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: $primary-color;
+            content: "";
+            @include transition;
+            z-index: -1;
+        }
+        @include rmaxwd(767) {
+            width: 40px;
+            height: 40px;
+        }
+        &.prev-btn {
+            left: 74px;
+            @include rmaxwd(1600) {
+                left: 10px;
+            }
+        }
+        &.next-btn {
+            right: 102px;
+            @include rmaxwd(1600) {
+                right: 10px;
+            }
+        }
+        i{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $white;
+            font-size: 21px;
+            @include transition;
+        }
+        &:hover{
+            @include transition;
+            border-color: transparent;
+
+            &:before {
+                width: 100%;
+                @include transition;
+            }
+
+            i{
+                color: $black;
+                @include transition;
+            }
+        }
+  }
+  .slider-bg-image{
+      position: relative;
+      height: 1083px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      .slider-overlay{
+        background: #121212;
+        opacity: 0.831;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      @include rmaxwd(992){
+        height: 1060px;
+      }
+      @include sm{
+        height: 900px;
+      }
+    
+  }
+  .slider-wrapper{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    .slick-dots {
+      display: none !important;
+    }
+  }
+
+  .single-slider {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    height: 1083px;
+    @include rmaxwd(1000){
+      height: 1060px;
+    }
+    @include rmaxwd(767){
+      height: 880px;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1199px) {
+      padding-bottom: 80px;
+    }
+
+    
+    .slider-content-wrapper {
+      position: relative;
+      z-index: 99;
+      @include sm {
+        padding-bottom: 30px;
+      }
+    }
+    .slider-image {
+      position: relative;
+      z-index: 2;
+      width: 860px;
+      right: 47px;
+      top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 20px;
+      @include rmaxwd(1000){
+        top: 80px;
+      }
+      @include rmaxwd(767){
+        top: 100px;
+      }
+      img{
+        border-radius: 0px !important;
+      }
+      .slider-image-shape {
+           -webkit-mask-image: url("../images/shape/hero-img-shape.png");
+            mask-image: url("../images/shape/hero-img-shape.png");
+            -webkit-mask-position: center center;
+            mask-position: center center;
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+      }
+      .slider-main-img{
+        @include rmaxwd(1000){
+          height: 400px;
+        }
+        &.slider-image-2{
+          margin-left: -80px;
+          @include rmaxwd(1700){
+            margin-left: -70px;
+          }
+          @include rmaxwd(1400){
+            margin-left: -60px;
+          }
+          @include rmaxwd(1200){
+            margin-left: -50px;
+          }
+          @include rmaxwd(1000){
+            margin-left: -40px;
+          }
+          @include rmaxwd(800){
+            margin-left: -20px;
+          }
+          @include rmaxwd(600){
+            margin-left: 0px;
+          }
+        }
+      }
+      .sketch-1{
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate(-4%, -6%);
+        z-index: 10;
+        animation: beat 1.4s infinite alternate;
+        i{
+          font-size: 305px;
+          z-index: 30;
+          position: relative;
+          color: $primary-color;
+        }
+        @include rmaxwd(1800){
+          width: 250px;
+        }
+        @include rmaxwd(1200){
+          width: 200px;
+        }
+        @include sm{
+          animation: beat 1.4s infinite alternate;
+        }
+      }
+      .sketch-2{
+        position: absolute;
+        left: 0;
+        top: 0;
+        // animation: move 2s infinite alternate;
+        @include rmaxwd(1400){
+          animation: none;
+        }
+        i{
+          
+          font-size: 148px;
+          color: $white;
+        }
+      }
+      .sketch-3{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin-bottom: -6px;
+        margin-right: 228px;
+        animation-name: rotate;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        z-index: 10;
+        @include rmaxwd(1800){
+           margin-right: 200px !important;
+        }
+        @include rmaxwd(1400){
+           width: 120px;
+           margin-right: 140px !important;
+        }
+        @include rmaxwd(767){
+           width: 80px;
+           margin-right: 94px !important;
+           margin-bottom: 50px;
+        }
+      }
+      .sketch-4{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        // transform: translate(500%, 0);
+         @include rmaxwd(1200){
+           display: none;
+        }
+      }
+      @include rmaxwd(1799) {
+        width: auto;
+        margin-top: inherit;
+      }
+       @include rmaxwd(767) {
+        animation: none;
+        right: unset;
+        text-align: center;
+      }
+    }
+  }
+  
+ }
+ 
+}

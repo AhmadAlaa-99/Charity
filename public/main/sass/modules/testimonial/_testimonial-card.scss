@@ -1,0 +1,94 @@
+.testimonial-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 60px;
+    
+    @include sm {
+        margin-top: 130px;
+        padding: 35px;
+    }
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+    .content {
+        .text {
+            width: 640px;
+            margin: 0;
+            text-align: center;
+            color: $black-2;
+            font-family:$heading-font;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%; /* 30.8px */
+            letter-spacing: 0.44px;
+            @include rmaxwd(1200){
+                font-size: 18px;
+                width: auto !important;
+            }
+            @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+                font-size: 16px;
+            }
+            @include rmaxwd(991) {
+                br{
+                    display: none;
+                }
+            }
+        }
+    }
+    .quote-icon{
+        text-align: center;
+        i{
+            font-size: 48px;
+            color: $primary-color;
+        }
+    }
+    .meta-user {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .user-image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                width: 72px;
+                height: 72px;
+                border-radius: 100%;
+                overflow: hidden;
+                img{
+                    border-radius: 100%;
+                }
+            }
+            .info {
+                display: flex;
+                flex-direction: column;
+
+                .name {
+                    margin: 0;
+                    font-size: 21px;
+                    line-height: 28px;
+                    font-weight: 700;
+                    color: $secondary-color;
+                }
+                .address {
+                    margin: 0;
+                    font-size: 16px;
+                    line-height: 30px;
+                    font-weight: 400;
+                    color: #778196;
+                }
+            }
+        }
+    }
+}

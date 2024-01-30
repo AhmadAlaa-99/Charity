@@ -1,0 +1,121 @@
+.event-single-card{
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+    width: 416px !important;
+    height: 500px;
+    margin-right: 24px;
+    border-radius: 20px;
+    .image-wrapper{
+        border-radius: 20px;
+        overflow: hidden;
+        img{
+            @include transition;     
+        }
+    }
+    .card-content-inner{        
+        .banner{
+            position: absolute;
+            top: 0;
+            left: 0;
+            align-items:center;
+            padding: 12px 24px;
+            background: $primary-color;
+            border-radius: 20px 0px;
+            text-align: center;
+            font-family:$heading-font;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 130%;
+            letter-spacing: 0.36px;
+            color: $black-2;
+            p{
+                color: $black-2;
+            }
+        }
+        .content{
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 56px;
+            .content-title{
+                font-family: $heading-font;
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 140%; 
+                letter-spacing: 0.44px;
+                color: $white;
+                padding:0px 24px;
+                margin-bottom: 13px;
+                a{
+                    @extend .animated-text-two;
+                }
+            }
+            .schedule{
+                display: flex;
+                gap: 16px;
+                padding-left: 33px;
+                i{
+                    font-size: 16px;
+                    color: $primary-color;
+                }
+                p{
+                    margin: 0;
+                    color: $white;
+                }
+                .single-item{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;   
+                }
+            }
+        }
+        .button-link{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            border: 2px solid $white;
+            background: $gray-5;
+            border-radius: 100px;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translate(-38%, 50%);
+            cursor: pointer;
+            overflow: hidden;
+            i{ 
+                @include transition;
+                margin-left: 0px;
+                color: $black;
+            }
+            &:before {
+                position: absolute;
+                width: 0;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background: $brand;
+                content: "";
+                @include transition;
+                z-index: -1;
+            }
+            &:hover{
+                @include transition;
+                &:before {
+                    width: 100%;
+                     @include transition;
+                }
+                i{
+                    margin-left: 5px;
+                    color: $white;
+                    @include transition;
+                }
+            }
+        }
+    }
+}

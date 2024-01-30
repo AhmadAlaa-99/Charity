@@ -1,0 +1,81 @@
+.client-area{
+    margin-top: -224px;
+    background-color: $gray-5;
+    &.style-1{
+        .client-container-wrapper{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 24px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: $primary-color;
+            position: relative;
+            z-index: 2;
+            padding: 88px 50px;
+            border-radius: 50px 50px 50px 0px;
+            @include rmaxwd(767){
+              border-radius: 20px 20px 20px 0px;  
+              padding: 88px 40px;
+            }
+            .feature-image{
+                position: absolute;
+                z-index: 20;
+                top: 42px;
+                left: 80px;
+            }
+            .feature-image2{
+                position: absolute;
+                z-index: 20;
+                bottom: 0;
+                right: 0;
+                margin-bottom: -28px;
+                margin-right: 42px;
+                animation: MoveUpDown 2s linear infinite alternate;
+            }
+            .img-wrapper{
+                flex-shrink: 0;
+            }
+            .top-client-wrapper{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 20;
+                @include rmaxwd(992){
+                    flex-wrap: wrap;
+                    justify-content: start;
+                    gap: 20px;
+                }
+                @include sm{
+                    gap: 0px;
+                    .img-wrapper{
+                        width: 50%;
+                        flex-shrink: 0;
+                    }
+                }
+               
+            }
+            .bottom-client-wrapper{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 20;
+                gap: 24px;
+                @include rmaxwd(992){
+                    justify-content: start;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+                @include sm{
+                    gap: 0px;
+                    .img-wrapper{
+                        width: 50%;
+                    }
+                }
+                
+            }
+        }
+    
+    }
+}

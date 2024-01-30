@@ -1,0 +1,65 @@
+.service-area{
+    &.style-1{
+        background-color: $white;
+        padding-top: 120px;
+        padding-bottom: 110px;
+        position: relative;
+        overflow: hidden;
+        @include rmaxwd(1200){
+            padding:80px 0px;
+        }
+        .service-wrapper{
+            position: relative;
+            z-index: 20;
+        }
+        .top-feature{
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 81px;
+            margin-left: 127px;
+            right: 40px;
+            width: 248px;
+            height: 244px;
+            animation: beat 1.4s infinite alternate;
+            z-index: 10;
+            @include rmaxwd(992){
+                width: 180px;
+            }
+        }
+        .bottom-feature{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin-bottom: 60px;
+            margin-right: 92px;
+            width: 142px;
+            height: 143px;
+            animation: rotate 4s infinite alternate;
+            i{
+                font-size: 143px;
+                color: $black;
+            }
+            @include rmaxwd(1784){
+                display: none;
+            }
+        }
+        .section-title{
+            align-items: center;
+            text-align: center;
+            margin-bottom: 64px;
+            span{
+                margin-bottom: 14px;
+            }
+            .title{
+                width: 668px;
+                line-height: 126%;
+                @include rmaxwd(1400){
+                    width: auto;
+                }
+            }
+        }
+        
+    }
+}
+

@@ -1,0 +1,32 @@
+.scrollup-wrapper {
+  position: fixed;
+  right: 40px;
+  bottom: 20px;
+  z-index: 9999;
+}
+.scrollup-btn {
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  font-size: 26px;
+  color: $white;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  align-items: center;
+  cursor: pointer;
+  background-color: $brand;
+  
+  &.style-1{
+    background-color: $brand;
+  }
+  &.style-2{
+    background-color: $secondary-color;
+  }
+  i {
+    margin-top: -3px;
+    display: block;
+  }
+}

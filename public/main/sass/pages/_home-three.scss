@@ -1,0 +1,89 @@
+
+// Counter Area
+.counter-area{
+    &.style-3{
+      padding: 120px 0px;
+       @include md{
+        padding: 100px 0;
+      }
+      @include sm {
+        padding: 80px 0px;
+      }
+    }
+}
+// Causes Area
+.causes-area{
+    &.style-3{
+      padding: 120px 0px;
+      background:$gray-5 ;
+      position: relative;
+      @include md{
+        padding: 100px 0;
+      }
+      @include sm {
+        padding: 80px 0px;
+      }
+      .theme-btn{
+        &.style-1{
+          &:hover{
+            background-color: $brand !important;
+            color: $white !important;
+          }
+        }
+      }
+      .shape-1{
+        position: absolute;
+        top: 92px;
+        left: 37px;
+        @include rmaxwd(1845) {
+          top: 10px;
+          left: 10px;
+          width: 140px;
+        }
+        @include rmaxwd(767) {
+          top: 30px;
+          width: 70px;
+          animation: MoveUpDown 2s linear infinite alternate;
+        }
+      }
+      .shape-2{
+        position: absolute;
+        top: 261px;
+        right: 32px;
+        animation: beat 1.4s infinite alternate;
+      }
+      .section-title{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 64px;
+            @include sm{
+              justify-content: start;
+              align-items: start;
+              flex-direction: column;
+              gap: 24px;
+            }
+      }
+      .theme-btn{
+                height: 50%;
+                
+      }
+      .short-title{
+        color: $brand;
+      }
+      
+    }
+}
+// Event Slider
+.event-slider{
+    &.style-1{
+      padding: 120px 0px;
+      @include md{
+        padding: 100px 0;
+      }
+      @include sm {
+        padding: 80px 0px;
+      }
+    }
+}

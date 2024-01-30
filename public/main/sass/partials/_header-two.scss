@@ -1,0 +1,42 @@
+.header-area {
+    &.style-2{
+      background: $white;
+      position: relative;
+      .main-menu{
+        ul{
+          li{
+            a{
+              color: $black-2;
+            }
+            &.active{
+              >a{
+                color: $secondary-color;
+              }
+            }
+          }
+        }
+      }
+      .submenu{
+        // border-top: 2px solid $primary-color !important;
+        li{
+          color: $black-2;
+          border-bottom: 1px solid $gray-4;
+          
+              &:hover{
+                @include transition;
+                border-color: transparent !important;
+                background-color: #8ec8bd !important;
+                a{
+                  color: $black-2 !important;
+                }
+              }
+        }
+      }
+      .header-menu-area-inner{
+        padding: 0px;
+        @include rmaxwd(1281){
+            padding: 0 12px;
+        }
+      }
+    }
+}

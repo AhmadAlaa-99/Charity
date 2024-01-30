@@ -1,0 +1,186 @@
+.causes-card{
+            background: $white;
+            overflow: hidden;
+            border-radius: 20px;
+            img{
+                @include transition;
+                width: 100%;
+            }
+            .content{
+                padding: 24px 28px 32px 20px;
+                .title{
+                    font-family: $heading-font;
+                    font-size: 22px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 140%;
+                    letter-spacing: 0.44px;
+                    color: $black-2;
+                    margin-bottom: 16px;
+                    cursor: pointer;
+                    @extend .animated-text-red ;
+                    @include rmaxwd(1400){
+                        font-size: 20px;
+                    }
+                    @include rmaxwd(1200){
+                        font-size: 18px;
+                    }
+                }
+                .desc{
+                    font-family:$body-font;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 170%; 
+                    letter-spacing: 0.32px;
+                    color: $black-3;
+                    margin-top: 16px;
+                    cursor: default;
+                }
+                .btn-section{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 32px;
+                    @include rmaxwd(1200){
+                        gap: 16px;
+                    }
+                    .theme-btn{
+                        &.style-1{
+                            justify-content: center;
+                            border-radius: 10px;
+                            padding: 8px 16px;
+                            cursor: default;
+                            &:hover{
+                                color: $black-2
+                            }
+                        }
+                       
+                    }
+                    .support{
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        .icon{
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 1px solid $gray-4;
+                            i{
+                                color: $brand;
+                                font-size: 30px;
+                                
+                            }
+                            img{
+                                height: auto;
+                                width: auto;
+                            }
+                            &:hover{
+                                i{
+                                    transform: rotateY(360deg);
+                                    @include transition;
+                                }
+                                img{
+                                    transform: rotateY(360deg);
+                                    @include transition;
+                                }
+                            }
+                        }
+                        .support-text{
+                            h6{
+                                color: $black-2;
+                                cursor: default;
+                            }
+                            p{
+                                margin: 0;
+                                cursor: default;
+                            }
+                        }
+                    }
+                }
+            }
+            .image-wrapper{
+                position: relative;
+                overflow: hidden;
+                cursor: default;
+                .skill-progressbar{
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    .progress-content{
+                        background-color: $brand;
+                        border-radius: 0px 10px 10px 0px;
+                    }
+                    .progress-inner-item{
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 20px 28px 16px 20px;
+                        background: rgba(18, 18, 18, 0.60);
+
+                            .progress-percent{
+                                color: $primary-color;
+                                font-family: $body-font;
+                                font-size: 18px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 170%;
+                                letter-spacing: 0.36px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 60px;
+                                height: 60px;
+                                border: 1px solid $white;
+                                border-radius: 50px;
+                            }
+                            .title{
+                               font-family: $body-font;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 170%; 
+                                letter-spacing: 0.32px; 
+                                color: $white;
+                                margin: 0px;
+                                padding: 0px;
+                            }
+                            .price{
+                                color: $white;
+                                font-size: 18px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: 170%;
+                                margin: 0px;
+                                padding: 0px;
+                            }
+                        
+                    }
+                }
+                
+            }
+            &:hover{
+                img{
+                    transform: scale(1.03);
+                    @include transition;
+                }
+                .icon{
+                    @include transition;
+                    i{
+                        transform: rotateY(360deg);
+                        @include transition;
+                    }
+                    img{
+                        transform: rotateY(360deg);
+                        @include transition;
+                    }
+                }
+                .content{
+                    h3{
+                        background-position: -100%;
+                    }
+                } 
+            }
+        }

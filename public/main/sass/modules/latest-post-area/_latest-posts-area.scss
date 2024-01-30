@@ -1,0 +1,52 @@
+.latest-posts-area {
+    
+    position: relative;
+    background: $gray-5;
+    &.style-2{
+        .feature-shape-1{
+            position: absolute;
+            bottom: 152px;
+            left: 57px;
+            @include lg{
+                bottom: 0;
+                left: 0;
+            }
+             @include md{
+                bottom: 0;
+                left: 0;
+            }
+            @include sm{
+                display: none;
+            }
+        }
+        .blog-container-wrapper{
+            position: relative;
+            .feature-shape-2{
+                position: absolute;
+                right: 0;
+                top: 31px;
+                @include lg{
+                    width: 200px;
+                }
+                @include md{
+                    width: 140px;
+                }
+                @include sm{
+
+                   display: none;
+                }
+            }
+            .section-title{
+                align-items: center;
+                text-align: center;
+                padding-bottom: 64px;
+                .title{
+                    width: 713px;
+                    @include rmaxwd(1400){
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}

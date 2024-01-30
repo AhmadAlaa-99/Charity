@@ -1,0 +1,89 @@
+// About us
+.about-us-area{
+    &.style-2{
+        padding: 120px 0px;
+        background-color: $sky-color-2;
+         @include md{
+            padding: 100px 0;
+        }
+        @include sm {
+            padding: 80px 0px;
+        }
+    }
+}
+// Causes Area
+.causes-area{
+    position: relative;
+    padding-bottom: 110px;
+    overflow: hidden;
+     background-color: $gray-5;
+     @include md{
+        padding-bottom: 100px;
+      }
+      @include sm {
+        padding-bottom: 80px;
+      }
+}
+// Counter-Area
+.counter-area{
+    &.style-2{
+        padding-top: 120px;
+        padding-bottom: 350px;
+       
+        @include md{
+            padding-top: 100px;
+            padding-bottom: 320px;
+        }
+        @include sm {
+            padding-top: 80px;
+            padding-bottom: 280px;
+        }
+    }
+}
+//Testimonial-slider-area
+.testimonial-slider-area{
+    &.style-2{
+        padding: 120px 0px;
+        @include md{
+            padding: 100px 0;
+        }
+        @include sm {
+            padding: 72px 0px;
+            padding-bottom: 15px;
+        }
+        button.testimonial-arrow-btn {
+            &:before {
+                position: absolute;
+                width: 0;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background:$secondary-color !important;
+                content: "";
+                @include transition;
+                z-index: -1;
+            }
+            &:hover{
+                @include transition;
+                border-color: $secondary-color;
+
+                &:before {
+                width: 100%;
+                @include transition;
+                }
+            }
+        }
+        
+    }
+}
+// Latest-posts-area 
+.latest-posts-area {
+    padding:120px 0px;
+    @include md{
+        padding: 100px 0;
+    }
+    @include sm {
+        padding-top: 72px;
+        padding-bottom: 80px;
+    }
+}

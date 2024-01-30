@@ -1,0 +1,86 @@
+.event-card{
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            z-index: 20;
+            .image-wrapper{
+                overflow: hidden;
+                img{
+                    width: 100%;
+                     @include transition;
+                }
+            }
+            .content-wrapper{
+                background-color: $white;
+                padding: 32px 40px 36px 32px;
+                .meta-info{
+                    display: flex;
+                    align-items: center;
+                    gap: 5px 16px;
+                    flex-wrap: wrap;
+                    margin-bottom: 16px;
+                    .single-meta{
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        cursor: default;
+                        i{
+                            font-size: 16px;
+                            color: $brand;
+                        }
+                        .meta-text{
+                            font-family: $heading-font;
+                            font-size: 16px;
+                            font-weight: 600;
+                            letter-spacing: 0.32px;
+                            color: $black-2;
+                        }
+                    }
+                }
+                .title{
+                    font-family: $heading-font;
+                    color: $black-2;
+                    font-size: 22px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 140%;
+                    letter-spacing: 0.44px;
+                     @extend .animated-text ;
+                     @include rmaxwd(1400){
+                        font-size: 18px;
+                     }
+                     @include rmaxwd(1200){
+                        font-size: 22px;
+                     }
+                     @include rmaxwd(1000){
+                        font-size: 18px;
+                     }
+                }
+                .desc{
+                    font-family: $body-font;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 170%; /* 30.6px */
+                    letter-spacing: 0.36px;
+                    margin-top: 16px;
+                    cursor: default;
+                }
+                .event-card-btn{
+                    margin-top: 32px;
+                    .theme-btn{
+                        padding: 16px 24px !important;
+                        &:hover{
+                            background-color:$primary-color;
+                            color: $white ;
+                            
+                        }
+                    }
+                }
+            }
+            &:hover{
+                    img{
+                        transform: scale(1.03);
+                        @include transition;
+                    }
+            }
+}

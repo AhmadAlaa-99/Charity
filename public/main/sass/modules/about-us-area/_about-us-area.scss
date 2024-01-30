@@ -1,0 +1,684 @@
+.about-us-area {
+    position: relative;
+    overflow: hidden;
+    .about-us-image-wrapper{
+        display: flex;
+        gap: 24px;
+        position: relative;
+        padding-right: 20px;
+        @include rmaxwd(1200){
+            justify-content: center;
+            align-items: center;
+            padding-right: 0px;
+        }
+        @include sm{
+            margin-top: -60px;
+        }
+        .shape{
+            position: absolute;
+            top: 0;
+            left: -12%;
+            margin-top: 46px;
+            z-index: 10;
+            // animation: rotating 12s linear infinite;
+            @include rmaxwd(1500){
+                width:180px ;
+                left: -4%;
+                margin-top: 100px;
+            }
+            @include rmaxwd(1200){
+                margin-top: 60px;
+                left: 6%;
+            }
+            @include rmaxwd(992){
+                margin-top: 90px;
+                left: -8%;
+            }
+            @include rmaxwd(767){
+                margin-top: 20px;
+                left: 0%;
+                width: 100px;
+            }
+            // @include rmaxwd(1300){
+            //     width:180px ;
+            //     left: 2%;
+            // }
+            // @include rmaxwd(1000){
+            //     width:180px ;
+            //     left: -2%;
+            // }
+            // @include rmaxwd(767){
+            //     width: 100px;
+            //     left: -8%;
+            //     top: 8%;
+            //     margin-top: -10px;
+            // }
+            // @include rmaxwd(500){
+            //     width: 100px;
+            //     left: 1%;
+            //     top: 1%;
+            //     margin-top: -42px;
+            // }
+        }
+        .shape-1{
+            position: absolute;
+            top: 0;
+            left: 35%;
+            margin-top: 200px;
+            // animation: stretch 1.5s ease-out 0s alternate infinite none running;
+            @include rmaxwd(767){
+                margin-top: 150px;
+                width: 180px;
+            }   
+            @include rmaxwd(500){
+                margin-top: 110px;
+                width: 130px;
+                left: 38%;
+            }  
+        }
+        .shape-2{
+            position: absolute;
+            bottom: 0;
+            left: -56px;
+            margin-bottom: -70px;
+            z-index: 10;
+            @include rmaxwd(1600){
+                height: 282px;
+                margin-bottom: 0px;
+            }
+            @include rmaxwd(1400){
+                margin-bottom: 18px;
+            }
+            @include rmaxwd(1200){
+                left: 50px;
+                margin-bottom: -1px;
+            }
+            @include rmaxwd(992){
+                left: -46px;
+                margin-bottom: 6px;
+            }
+            @include rmaxwd(767){
+                height: 220px;
+                left: -36px;
+                margin-bottom: 63px;
+            }
+            @include rmaxwd(600){
+                left: -7px;
+                margin-bottom: 8px;
+            }
+            // @include rmaxwd(767){
+            //     height:185px;
+            //     left: -40px;
+            //     margin-bottom: 54px;
+            // }
+            // @include rmaxwd(600){
+            //     height: 123px !important;
+            //     left: -5px;
+            //     margin-bottom: 29px;
+            //     animation: MoveUpDown 2s linear infinite alternate;
+            // }
+        }
+        .slider-image-shape {
+            -webkit-mask-image: url("../images/shape/about-img-shape.png");
+            mask-image: url("../images/shape/about-img-shape.png");
+            -webkit-mask-position: center center;
+            mask-position: center center;
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            z-index: 20;
+            // margin-top: -40px;
+            &:hover{
+                img{
+                    transform: scale(1.03);
+                    @include transition;
+                }
+            }
+        }
+        .bg-img{
+            position: relative;
+            width: 712px;
+            height: 814px;
+            z-index: 20;
+            @include transition;
+            @include rmaxwd(767){
+                width: auto;
+                height: auto;
+            }
+        }
+        .first-wrapper, .second-wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            img{
+                position: relative;
+                z-index: 5;
+                @include transition;
+                &:hover{
+                    @include transition;
+                    transform: scale(1.03);      
+                } 
+            }
+            .image-1{
+                position: relative;
+                .sketch-1{
+                    position: absolute;
+                    top: -11px;
+                    left: -90px;
+                    width: 180px;
+                    height: 180px;
+                    animation: none !important;
+                    &:hover{
+                        animation: rotating 12s linear infinite !important;
+                    }
+                    @include sm{
+                        left: -10px;
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+                .sketch-2{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    margin-left: -37px;
+                    margin-bottom: -53px;
+                    // transform: translate(-30%, 40%);
+                    @include rmaxwd(767){
+                        margin-left: -27px;
+                        margin-bottom: -36px;
+                        width: 80px;
+                    }
+                    @include rmaxwd(437){
+                        margin-left: -12px;
+                        margin-bottom: -30px;
+                        width: 60px;
+                    }
+                    img{
+                        border-radius: 0;
+                    }   
+                }    
+            }
+            .image-2{
+                position: relative;
+                .sketch-3{
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    margin-right: -49px;
+                    margin-bottom: -49px;
+                    // transform: translate(40%, 30%);
+                    @include rmaxwd(767){
+                        margin-right: -36px;
+                        margin-bottom: -29px;
+                        width: 80px;
+                    }
+                    @include rmaxwd(437){
+                        margin-right: -32px;
+                        margin-bottom: -17px;
+                        width: 60px;
+                    }
+                    img{
+                        border-radius: 0;
+                    }
+                }
+            }
+            .image-1, .image-4{
+                .img-wrapper{
+                    overflow: hidden;
+                    border-radius: 193px;
+                }    
+            }
+            .image-2, .image-3{
+                .img-wrapper{
+                    overflow: hidden;
+                    border-radius: 193px;
+                }
+            }
+        }
+    }
+    .about-us-content-wrapper{
+        padding-top: 10px;
+        position: relative;
+        .section-title{
+            .short-title{
+                color: $brand;
+            }
+            .desc{
+                padding-right: 118px;
+                @include sm{
+                    padding-right: 0px;
+                }
+            }
+            .title{
+                padding-top: 10px; 
+            }
+        }
+        .about-us-list{
+            margin-top: 40px;
+            padding-right: 116px;
+            @include sm{
+                padding-right: 0px;
+            }
+            .list-item{
+                display: flex;
+                align-items: start;
+                gap: 24px;
+                margin-bottom: 24px;
+                .icon{
+                    width: 72px;
+                    height: 72px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid $gray-4;
+                    background-color: transparent;
+                    i{
+                        font-size: 40px;
+                        line-height: 40px;
+                        color: $brand;
+                        @include transition;
+                    } 
+                }
+                .content-wrapper{
+                    .title{
+                        margin-bottom: 8px;
+                        color: $black-2;
+                        @include transition;
+                        cursor: default;
+                    }
+                    .desc{
+                        color: $black-3;
+                        font-family: $body-font;
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 170%; /* 30.6px */
+                        letter-spacing: 0.36px;
+                        margin: 0;
+                        cursor: default;
+                    }
+                }
+                &:hover{
+                    .icon{
+                        i{
+                            transform: rotateY(360deg);
+                            @include transition;
+                        }
+                        img{
+                            transform: rotateY(360deg);
+                            @include transition;
+                        }
+                    }
+                    .content-wrapper{
+                        .title{
+                            @include transition;
+                            background-position: -100%;
+                        }
+                    }
+                }
+            }
+        }
+        .about-btn{
+            margin-top: 48px;
+            .theme-btn{
+                background: transparent;
+                height: 64px;
+                padding: 17px 32px !important;   
+            }
+        }
+        .certified-wrapper{
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            transform: translate(36px, 58px);
+            @include rmaxwd(767){
+                bottom: 10px;
+                transform: translate(0px, 70px);
+            }
+            @include rmaxwd(323){
+                bottom: 10px;
+                transform: translate(0px, 50px) !important;
+            }
+        }
+    }
+    .about-us-image-wrapper-2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .image-wrapper-inner2{
+            transform: translate(0px, 79px);
+            @include sm{
+                transform: translate(0px, 24px);
+            }
+        }
+        .image-shape-1{
+            position: relative;
+            z-index: 20;
+            .image-area{
+                position: relative;
+                z-index: 20;
+                border-radius: 50px 50px 0px 50px;
+                overflow: hidden;
+                img{
+                    @include transition;
+                }
+                &:hover{
+                    img{
+                        transform: scale(1.03);
+                        @include transition;
+                    }
+                }
+            }
+            .icon-shape-1{
+                position: absolute;
+                left: -188px;
+                top: -34px;
+                width: 176px;
+                height: 116px;
+                @include rmaxwd(1690){
+                    width: 100px;
+                    height: 100px;
+                    left: -70px;
+                    top: -23px;
+                }
+                @include rmaxwd(1454){
+                    left: -20px;
+                    top: -60px;
+                }
+                @include rmaxwd(767){
+                    width: 60px;
+                    height: 60px;
+                    left: -9px;
+                    top: -20px;
+                }
+            }
+            .icon-shape-2{
+                position: absolute;
+                width: 227px;
+                height: 227px;
+                left: -117px;
+                bottom: -48px;
+                @include rmaxwd(1542){
+                    width: 150px;
+                    height: 150px;
+                    left: -70px;
+                }
+                @include rmaxwd(850){
+                    width: 100px;
+                    height: 100px;
+                    left: 0px;
+                    animation: rotating 12s linear infinite !important;
+                }
+            }
+        }
+        .image-shape-2{
+            display: flex;
+            align-items: end;
+            margin-left: 8px;
+            .image-area{
+                border-radius: 30px 30px 30px 0px;
+                overflow: hidden;
+                img{
+                    @include transition;
+                }
+                &:hover{
+                    img{
+                        transform: scale(1.03);
+                        @include transition;
+                    }
+                }
+            }
+        }
+        .image-shape-3{
+            position: relative;
+            display: flex;
+            justify-content: right;
+            align-items: end;
+            margin-top: 8px;
+            z-index: 20;
+            .image-area{
+                border-radius: 30px 0px 30px 30px;
+                overflow: hidden;
+                img{
+                    @include transition;
+                }
+                &:hover{
+                    img{
+                        transform: scale(1.03);
+                        @include transition;
+                    }    
+                }
+            }
+        }
+        .image-shape-4{
+            position: relative;
+            margin-top: 8px; 
+            margin-left: 8px;
+            .bg-shape{
+                position: relative;
+                z-index: 20;
+                background: $secondary-color; 
+                border-radius: 0px 20px 20px 20px;
+                width: 96px;
+                height: 96px;
+                @include transition;    
+            } 
+            .icon-shape-3{
+                position: absolute;
+                z-index: 10;
+                transform: translate(18%, -9%);
+                width: 130px;
+                height: 51px;
+                // animation: beat 1.4s infinite alternate;
+                i{
+                    color: $black-2;
+                    font-size: 51px;
+                }
+                @include rmaxwd(850){
+                    right: 30px;
+                    width: 60px;
+                    i{
+                        font-size: 30px;
+                    }
+                }
+            } 
+        }
+    }
+    .about-us-content-wrapper-2{
+            .inner{
+                p{
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+            .section-title{
+                .title{
+                    margin-top: 10px;
+                    width: 492px;
+                    @include rmaxwd(1400){
+                        width: auto;
+                    }
+                }
+            }
+            .desc{
+                color: $black-3;
+                font-family: $body-font;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                letter-spacing: 0.36px;
+                padding-right: 76px;
+                margin: 0px;
+                margin-top: 16px;
+            }
+            .about-us-inner{
+                display: flex;
+                gap: 54px;
+                @include sm{
+                    flex-direction: column;
+                    gap: 0px;
+                }
+                 .checkbox{
+                    margin-top: 25px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                     gap: 24px;
+                .checkbox-items{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    align-items: start;
+                    .single-item{
+                        display: flex;
+                        gap: 8px;
+                        justify-content: center;
+                        align-items: center;
+                        .icon{
+                            width: 24px;
+                            height: 24px;
+                            background:$primary-color ;
+                            border-radius: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            i{
+                                font-size: 11px;
+                                padding: 6px;
+                                color: $black-2;
+                            }
+                        }
+                        .title{
+                            font-family: $body-font;
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 400;
+                            letter-spacing: 0.36px;
+                            color: $black-2;
+                            cursor: default;
+                        }
+                    }
+                }
+                .signature-area{
+                    display: flex;
+                    gap: 12px;
+                    .profile-img{
+                        width: 64px;
+                        height: 64px;
+                        border-radius: 100%;
+                        overflow: hidden;
+                        
+                    }
+                    
+                    .content{
+                        .name{
+                            font-family: $heading-font;
+                            color: $black-2;
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 130%;
+                            letter-spacing: 0.36px;
+                            cursor: default;
+                        }
+                        .title{
+                            font-family: $body-font;
+                            color: $black-3;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 170%; 
+                            letter-spacing: 0.32px;
+                            cursor: default;
+                        }
+                    }
+                    .signature{
+                        img{
+                            width: 100%;
+                            border-radius: 0px
+                        };
+                    }
+                }
+                .about-us-btn{
+                    .theme-btn{
+                        &:hover{
+                            background-color: $primary-color !important;
+                            color: $white !important;
+                        }
+                    }
+                }
+                }
+                .counter-area{
+                    padding-top: 33px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    @include sm{
+                        flex-direction: row;
+                    }
+                    .single-counter{
+                        background: $white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        .single-counter-inner{
+                            padding: 43px 74px;
+                            @include sm{
+                              padding: 30px 0px;  
+                            }
+                            .counter-inner{
+                            display: flex;
+                            justify-content: center;
+                            color: $secondary-color;
+                            .counter{
+                                text-align: center;
+                                font-family: $heading-font;
+                                font-size: 28px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: 130%;
+                                letter-spacing: 0.56px;
+                                margin-bottom: 7px;
+                                color: $secondary-color;
+                                cursor: default;
+                            }
+                            span{
+                                
+                                text-align: center;
+                                font-family: $heading-font;
+                                font-size: 28px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: 130%;
+                                letter-spacing: 0.56px;
+                                color: $secondary-color;
+                            }
+                        }
+                        .title{
+                            font-family: $heading-font;
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 130%;
+                            letter-spacing: 0.36px;
+                            cursor: default;
+                            color: $black-2;
+                        }
+                        }
+                        
+                    }
+                    .divider{
+                        height: 2px;
+                        background: $white;
+                        @include sm{
+                            width: 2px;
+                        }
+                    }   
+                }
+            }
+           
+    }
+}

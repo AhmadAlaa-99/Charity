@@ -1,0 +1,19 @@
+.about-us-area {
+    &.style-1{
+        &.style-3{
+            // padding: 120px 0px;
+            .about-btn{
+                .theme-btn{
+                    margin-top: 48px;
+                    height: auto !important;
+                    background: $primary-color !important;
+                    height: auto !important;
+                    &:hover{
+                        @include transition;
+                        color: $white !important;
+                    }
+                }
+            }
+        }
+    }
+}

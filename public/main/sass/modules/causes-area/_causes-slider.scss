@@ -1,0 +1,116 @@
+.causes-slider-area{
+    position: relative;
+    
+    button.testimonial-arrow-btn{
+        &:before {
+        position: absolute;
+        width: 0;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background:$secondary-color;
+        content: "";
+        @include transition;
+        z-index: -1;
+    }
+    &:hover {
+        @include transition;
+        border-color: $brand;
+        border-color: $secondary-color;
+        &:before {
+        width: 100%;
+        @include transition;
+        }
+        i {
+        color: $white;
+        @include transition;
+        }
+    }
+    }
+    &.style-3{
+      position: relative;
+      .causes-card-2{
+        border-radius: 20px;
+        overflow: hidden;
+        padding: 0px;
+        background:$white ;
+        .content{
+          .title{
+            @extend .animated-text-red ;
+          }
+          .theme-btn{
+                &:hover{
+                    background-color: $primary-color !important;
+                    color: $black-2 !important;
+                }   
+            }
+        }
+        .skill-progressbar{
+          margin: 4px;
+          margin-bottom: 8px;
+          margin-top: 0px;
+
+        }
+        .progress-inner-item{
+            background:$gray-5 ;
+            border-radius: 0px 0px 20px 20px;
+          .title{
+            color: $black-3;
+             cursor: default;
+          }
+          .price{
+            color: $black-2;
+          }
+          .progress-percent{
+            color: $black-2;
+            border: 1px solid $gray-4;
+          }
+        }
+        .progress-content-outter {
+          background-color: $gray-4;
+        }
+        .progress-content {
+          background-color: $brand;
+        }
+      }
+    }
+     &.style-4{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 24px;
+      @include rmaxwd(1200){
+        grid-template-columns: auto auto;
+      }
+      @include rmaxwd(767){
+        grid-template-columns: auto;
+      }
+      .slider-inner{
+        padding: 0px;
+        background:$white ;
+        .skill-progressbar{
+          margin: 4px;
+          margin-top: 0px;
+        }
+        .progress-inner-item{
+            background:$gray-5 ;
+            border-radius: 0px 0px 20px 20px;
+          .title{
+            color: $black-3;
+          }
+          .price{
+            color: $black-2;
+          }
+          .progress-percent{
+            color: $black-2;
+            border: 1px solid $gray-4;
+          }
+        }
+        .progress-content-outter {
+          background-color: $gray-4;
+        }
+        .progress-content {
+          background-color: $brand;
+        }
+      }
+    }
+}

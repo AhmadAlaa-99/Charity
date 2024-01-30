@@ -1,0 +1,10 @@
+.about-us-area {
+    &.style-1{
+        .heart-sketch{
+            position: absolute;
+            bottom: 68px;
+            right: 36px;
+            animation: beat 1.4s infinite alternate;
+        }
+    }
+}

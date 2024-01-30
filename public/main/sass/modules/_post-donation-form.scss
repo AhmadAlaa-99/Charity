@@ -1,0 +1,155 @@
+.post-donation-form{
+    background-color: $white;
+    padding: 24px;
+    border-radius: 10px;
+    margin: 32px 0px;
+    h2{
+        font-family: $heading-font ;
+        color: $black-2 ;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%; /* 23.4px */
+        letter-spacing: 0.36px;
+        &.title{
+            margin-top: 8px;
+        }
+        &.personal-details{
+
+        }
+        &.address{
+            margin-top: 24px;
+        }
+    }
+    .comment-respond {
+        margin-top: 0px;
+        .checkbox{
+            background-color: red;
+        }
+    }
+    .check-mark{
+        display: flex;
+        gap: 8px;
+        margin: 24px 0px;
+    }
+    .donate-form{
+        border-radius: 5px;
+        border: 1px solid $gray-4;
+        background: none;
+        margin: 0px;
+        margin-top: 16px;
+        margin-bottom: 32px;
+        padding: 0px;
+        .donate-form-inner{
+            padding: 24px;
+
+        }
+        .input-inner{
+            display: flex;
+            justify-content: space-between;
+            @include rmaxwd(1400){
+                flex-direction: column-reverse;
+                gap: 16px;
+            }
+            .input-wrapper {
+                height: 48px;
+                margin-top: 0px; 
+                border-radius: 100px;
+                overflow: hidden;
+                order: 1;
+                .input-icon{
+                    background-color: $brand;
+                    i{
+                        color: $white;
+                    }
+                }
+                .donate-input-field{
+                    height: 48px;
+                    background:$gray-5 ;
+                    border-radius: 0px 50px 50px 0px;
+                    width: auto;
+                    color: $black-2;
+                    font-family: $heading-font;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 130%; 
+                    letter-spacing: 0.36px;
+                }
+            }
+            .check-mark{
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                order: 2;
+                @include sm{
+                    flex-direction: column;
+                    gap: 8px;
+                    align-items: start;
+                }
+                .single-item{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                    label{
+                        font-family: $body-font;
+                        color:$black-2;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 170%; 
+                        letter-spacing: 0.32px;
+                    }
+                }
+                span{
+                    cursor: default;
+                }
+            }
+        }
+        .value-list{
+            padding: 0px !important;
+            gap: 10px !important;
+            margin: 0px !important;
+            margin-top: 35px !important;
+            @include sm{
+                margin-top: 16px !important;
+            }
+            .value{
+                border: 1px solid $gray-4;
+                border-radius: 50px;
+                overflow: hidden;
+                 &:before {
+                    position: absolute;
+                    width: 0;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    background: $brand !important;
+                    content: "";
+                    @include transition;
+                    z-index: -1;
+                    color: $white !important;
+                    border-color: $brand !important;
+                }
+                &.active-field{
+                    background-color: $brand !important;
+                    border: 1px solid $brand !important;
+                    color: $white !important;
+                }
+                &:hover{
+                    border-color: $brand;
+                    &:before {
+                        width: 100%;
+                        @include transition;
+                    }
+                    color: $white !important;
+                }
+                
+            }
+        }
+
+    }
+
+}

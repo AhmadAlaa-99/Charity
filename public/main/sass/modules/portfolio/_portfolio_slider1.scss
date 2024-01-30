@@ -1,0 +1,61 @@
+.portfolio-area {
+  position: relative;
+  &.style-1 {
+    padding:0;
+    .protfolio-inner {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 8px;
+        @include rmaxwd(992){
+          // justify-content: start;
+          flex-wrap: wrap;
+        }
+      }
+    }
+    .img-content-wrapper {
+      position: relative;
+      overflow: hidden;
+      @include rmaxwd(767){
+        width: 48% ;
+      }
+      img {
+        @include transition;
+        
+      }
+      i{
+        color: $primary-color;
+        font-size: 32px;
+      }
+      .content {
+        @include transition;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        height: 100%;
+        background: rgba(18, 18, 18, 0.50);
+        visibility: hidden;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+     
+      &:hover {
+        .content {
+          @include transition;
+          visibility: visible;
+          opacity: 1;
+         
+        }
+        img{
+            transform: scale(1.03);
+            @include transition;
+        }
+      }
+     
+    }
+  }
+

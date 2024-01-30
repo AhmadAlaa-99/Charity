@@ -1,0 +1,69 @@
+.team-slider-area{
+    position: relative;
+    overflow: hidden;
+    &.style-1{
+        .team-member-card{
+            border-radius: 30px;
+            .content{
+                border-radius: 30px;
+            }
+        }
+        .section-title{
+            align-items: center;
+            .title{
+                width: 636px;
+                @include rmaxwd(1400){
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .banner{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+        height: 595px;
+        width: 100%;
+        &:after {
+        content: "";
+        background: $black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        opacity:.6;
+        }
+        .feature-item1{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            z-index: 10;
+            animation: move3 6s infinite alternate;
+            @include sm{
+                width: 80px;
+            }
+        }
+        .feature-item2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        .feature-item3{
+            position: absolute;
+            top: 254px;
+            left: 148px;
+            z-index: 10;
+            @include rmaxwd(1200){
+                display: none;
+            }
+        }
+
+    }
+}
+

@@ -1,0 +1,311 @@
+.testimonial-slider-wrapper {
+  position: relative;
+  &.style-1{
+  .slick-list {
+    margin: 0 -12px;
+    padding: 0;
+
+    @include md {
+      padding: 40px 10px;
+    }
+    @include sm {
+      padding: 30px 10px;
+    }
+    .slick-slide {
+      margin: 0 12px;
+      border-radius: 40px 40px 40px 0px;
+      @include transition;
+
+      &.slick-active {
+        @include transition;
+        box-shadow: none;
+        background-color: transparent;
+      }
+    }
+  }
+}
+  &.style-2{
+    button.testimonial-arrow-btn {
+    position: absolute;
+    top: 20%;
+
+    &.prev-btn {
+      left: -30px;
+      @include sm{
+        top: 16%;
+        left: 0px;
+      }
+    }
+    &.next-btn {
+      right: -30px;
+      @include sm{
+        top: 16%;
+        right: 0px;
+      }
+    }
+  }
+
+  }
+ &.style-3{
+     button.testimonial-arrow-btn {
+     position: absolute;
+     top: 72%;
+     @include rmaxwd(767){
+          top: 70%;
+      }
+
+    &.prev-btn {
+      left: 0;
+      margin-left: 524px;
+      transform: translate(50%, 50%);
+      @include rmaxwd(1400){
+          margin-left: -10px;
+      }
+      @include rmaxwd(767){
+          margin-left: 0px;
+      }
+    }
+    &.next-btn {
+      right: 0;
+      margin-right: 100px;
+      transform: translate(50%, 50%);
+      @include rmaxwd(1400){
+          margin-right: 50px;
+      }
+    }
+  }
+  .slick-list {
+    padding-top: 0px;
+    padding-bottom: 60px;
+    margin: 0 -12px;
+      .slick-slide {
+        margin: 0 60px;
+      }
+    }
+
+  }
+  .slick-list {
+    padding-top: 71px;
+    padding-bottom: 60px;
+    margin: 0 -12px;
+    overflow: hidden;
+    @include md {
+      padding: 40px 10px;
+    }
+    @include sm {
+      padding: 30px 10px;
+    }
+    .slick-slide {
+      margin: 0 12px;
+      // border-radius: 40px 40px 40px 0px;
+      @include transition;
+
+      &.slick-active {
+        @include transition;
+        // box-shadow: 0px 10px 44px 0px rgba(4, 43, 77, 0.08);
+        background-color: $white;
+
+        @include rmaxwd(991) {
+          // box-shadow: 1px 8px 44px rgba(20, 20, 43, 0.03);
+        }
+      }
+    }
+  }
+
+  // Slick Dots
+  .slick-dots {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    right: -65px;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    @media only screen and (min-width: 991px) and (max-width: 1280px) {
+      right: -15px;
+    }
+    @include rmaxwd(991) {
+      position: unset;
+      right: unset;
+      top: unset;
+      transform: inherit;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    li {
+      display: inline-block;
+      line-height: 0;
+      border: 2px solid $gray-4;
+      border-radius: 100px;
+      @include transition;
+
+      button {
+        font-size: 0;
+        padding: 0;
+        width: 12px;
+        height: 12px;
+        background-color: $white;
+        opacity: 0.478;
+        border-radius: 100px;
+        position: relative;
+        @include transition;
+      }
+      &.slick-active {
+        @include transition;
+        border: 2px solid $primary-color;
+
+        button {
+          background-color: $primary-color;
+          @include transition;
+        }
+      }
+    }
+  }
+  
+  // Slick Nav Arrow Button
+  button.testimonial-arrow-btn {
+     position: absolute;
+    top: 44%;
+    @include rmaxwd(992){
+      top: 43%;
+    }
+    &.prev-btn {
+      left: -30px;
+      @include rmaxwd(992){
+        left: -10px;
+      }
+    }
+    &.next-btn {
+      right: -30px;
+      @include rmaxwd(992){
+        right: -10px;
+      }
+    }
+  }
+  &:before,
+  &:after {
+    background: #f3f7fc;
+  }
+}
+
+// Slick Nav Arrow Button
+button.testimonial-arrow-btn {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: 99;
+  background-color: $white;
+  border: 1px solid $gray-300;
+  cursor: pointer;
+  bottom: 0;
+  overflow: hidden;
+
+  &:before {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background:$brand;
+    content: "";
+    @include transition;
+    z-index: -1;
+  }
+  @include rmaxwd(1200){
+    width: 50px;
+    height: 50px;
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $black;
+    font-size: 21px;
+    @include transition;
+  }
+  &:hover {
+    @include transition;
+    border-color: $brand;
+
+    &:before {
+      width: 100%;
+      @include transition;
+    }
+    i {
+      color: $white;
+      @include transition;
+    }
+  }
+}
+
+.testimonial-slider-arrow {
+  position: relative;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @include rmaxwd(991) {
+    // display: none;
+  }
+}
+
+// Testimonial Slider Control Three
+.testimonial-slider-wrapper {
+  &.style-three {
+    .slick-list {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 50px;
+
+      @include rmaxwd(767) {
+        padding-bottom: 30px;
+      }
+      .slick-slide {
+        border-radius: 40px 40px 40px 0px;
+        @include transition;
+
+        &.slick-active {
+          box-shadow: none;
+
+          @include rmaxwd(767) {
+            // box-shadow: 1px 8px 44px rgba(20, 20, 43, 0.03);
+            @include transition;
+          }
+        }
+      }
+    }
+
+    // Slick Dots
+    .slick-dots {
+      margin-top: 20px;
+      position: unset;
+      padding-left: 0;
+      flex-direction: row;
+      justify-content: center;
+
+    }
+  }
+}
+
+// Testimonial Slider Control Three
+
+.testimonial-slider-wrapper {
+  &.has-backgorund-slider {
+    .slick-dots {
+      margin-bottom: 0;
+      position: unset;
+      padding-left: 0;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}
