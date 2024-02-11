@@ -76,7 +76,7 @@
                                             <span class="text-nowrap">{{ $governance->date }}</span>
                                         </td>
                                         <td>
-                                            <a href="javascript:void(0)" class="btn btn-success light">تحميل الملف</a>
+                                            <a href="{{ route('admin.download.document',$governance->id) }}" class="btn btn-success light">تحميل الملف</a>
                                         </td>
                                         <td>
                                             <img
@@ -91,14 +91,20 @@
 
                                         <td>
                                             <div class="d-flex">
-                                                <a href="#" class="btn btn-primary shadow btn-xs sharp me-1 edit"
-                                                    data-bs-toggle="modal" data-id="{{ $governance->id }}"
+                                                <a href="javascript:void(0);"
+                                                    class="btn btn-primary shadow btn-xs sharp me-1 edit"
+                                                    data-bs-toggle="modal"
+                                                     data-id="{{ $governance->id }}"
                                                     data-name="{{ $governance->name }}"
                                                     data-date="{{ $governance->date }}"
                                                     data-note="{{ $governance->note }}"
-                                                    data-cost="{{ $governance->cost }}" >
+                                                    data-cost="{{ $governance->cost }}"
+
+                                                    data-bs-target="#edit">
                                                     <i class="fas fa-pencil-alt"></i>
                                                 </a>
+
+
                                                 <a href="#" class="btn btn-danger shadow btn-xs sharp"
                                                     onclick="event.preventDefault();
                                                      document.getElementById('destroy-form-{{ $governance->id }}').submit();"><i
@@ -138,10 +144,10 @@
                         <div class="row">
 
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom01">الاسم
+                                <label class="col-lg-2 col-form-label" for="validationCustom01">الاسم
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <input type="text" class="form-control" id="validationCustom01" placeholder=""
                                         value=""name="name" required="">
                                     @error('name', 'add')
@@ -153,10 +159,10 @@
                                 </div>
                             </div>
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom01">التاريخ
+                                <label class="col-lg-2 col-form-label" for="validationCustom01">التاريخ
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <input type="date" class="form-control" id="validationCustom01" placeholder=""
                                         value=""name="date" required="">
                                     @error('date', 'add')
@@ -168,10 +174,10 @@
                                 </div>
                             </div>
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom09">الملف
+                                <label class="col-lg-2 col-form-label" for="validationCustom09">الملف
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <input type="file" name="documention" class="form-file-input form-control"
                                         required>
                                     @error('documention', 'add')
@@ -184,10 +190,10 @@
                             </div>
 
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom09">الصورة
+                                <label class="col-lg-2 col-form-label" for="validationCustom09">الصورة
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <input type="file" name="image" accept="images/*"
                                         class="form-file-input form-control" required>
                                     @error('image', 'add')
@@ -200,11 +206,12 @@
                             </div>
 
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom09">ملاحظات
+                                <label class="col-lg-2 col-form-label" for="validationCustom09">ملاحظات
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
-                                    <textarea type="textarea" name="note" class="form-file-input form-control" required>
+                                <div class="col-lg-10">
+                                    <textarea type="textarea" rows="5" cols="5" name="note" class="form-file-input form-control"
+                                        required>
                                     </textarea>
 
                                     @error('note', 'add')
@@ -217,10 +224,10 @@
                             </div>
 
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom09">الكلفة
+                                <label class="col-lg-2 col-form-label" for="validationCustom09">الكلفة
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <input type="number" name="cost" class=" form-control" required>
                                     @error('cost', 'add')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -250,7 +257,7 @@
             <div class="modal-content">
                 <!-- رأس المودال -->
                 <div class="modal-header">
-                    <h5 class="modal-title">تعديل الشريك</h5>
+                    <h5 class="modal-title">تعديل بيانات ملف الحكمة</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <!-- جسم المودال -->
@@ -259,12 +266,11 @@
                         @csrf
                         @method('patch')
                         <div class="row">
-
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom01">الاسم
+                                <label class="col-lg-2 col-form-label" for="validationCustom01">الاسم
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <input type="text" class="form-control" id="name" name="name"
                                         required="">
                                     <input type="hidden" id="edit_id" name="id">
@@ -278,10 +284,10 @@
                             </div>
 
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom01">التاريخ
+                                <label class="col-lg-2 col-form-label" for="validationCustom01">التاريخ
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <input type="date" class="form-control" id="validationCustom01" placeholder=""
                                         value=""name="date" required="">
                                     @error('date', 'edit')
@@ -293,12 +299,12 @@
                                 </div>
                             </div>
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom09">الملف
+                                <label class="col-lg-2 col-form-label" for="validationCustom09">الملف
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <input type="file" name="documention" class="form-file-input form-control"
-                                        required>
+                                        >
                                     @error('documention', 'edit')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -307,14 +313,13 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom09">الصورة
+                                <label class="col-lg-2 col-form-label" for="validationCustom09">الصورة
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <input type="file" name="image" accept="images/*"
-                                        class="form-file-input form-control" required>
+                                        class="form-file-input form-control">
                                     @error('image', 'edit')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -323,13 +328,15 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom09">ملاحظات
+                                <label class="col-lg-2 col-form-label" for="validationCustom09">ملاحظات
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
-                                    <textarea type="textarea" name="note" class="form-file-input form-control" required>
+                                <div class="col-lg-10">
+                                    <textarea type="textarea" rows="5" cols="5" id="note" name="note"
+                                    class="form-file-input form-control"
+                                        required>
+
                                     </textarea>
 
                                     @error('note', 'edit')
@@ -342,10 +349,10 @@
                             </div>
 
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom09">الكلفة
+                                <label class="col-lg-2 col-form-label" for="validationCustom09">الكلفة
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <input type="number" name="cost" class=" form-control" required>
                                     @error('cost', 'edit')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -391,11 +398,16 @@
                 $('#edit .text-danger').remove();
                 var Id = $(this).data('id');
                 var name = $(this).data('name');
-                var link = $(this).data('link');
+                var date = $(this).data('date');
+                var note = $(this).data('note');
+                var cost = $(this).data('cost');
 
                 $('#edit_id').val(Id);
+
                 $('#edit input[name="name"]').val(name);
-                $('#edit input[name="link"]').val(link);
+                $('#edit input[name="date"]').val(date);
+                $('#edit textarea[name="note"]').val(note);
+                $('#edit input[name="cost"]').val(cost);
 
                 var updateUrl = "{{ url('admin/governances') }}/" + Id;
                 $('#edit_form').attr('action', updateUrl);

@@ -51,17 +51,11 @@
                     <div class="table-responsive fs-14">
                         <table class="table card-table display mb-4 dataTablesCard text-black" id="example5">
                             <thead>
-
-
                                 <tr>
                                     <th>ID</th>
                                     <th>الاسم</th>
                                     <th>النوع</th>
-                                    <th>الموقع</th>
-                                    <th>التاريخ</th>
                                     <th>الصورة</th>
-                                    <th>وصف</th>
-                                    <th>ملاحظات</th>
                                     <th>العمليات</th>
                                 </tr>
                             </thead>
@@ -81,21 +75,11 @@
                                         <td>
                                             <span class="text-nowrap">{{ $event->type }}</span>
                                         </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $event->location }}</span>
-                                        </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $event->date }}</span>
-                                        </td>
+
                                         <td>
                                             <img style="width:150px; height:150px;"src="{{ URL::asset($event->image) }}">
                                         </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $event->brive }}</span>
-                                        </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $event->notes }}</span>
-                                        </td>
+
 
                                         <td>
                                             <div class="dropdown">
@@ -128,8 +112,13 @@
                                                     </form>
 
                                                     <a class="dropdown-item"
-                                                        href="">
+                                                        href="{{ route('admin.events.edit', $event->id) }}">
                                                         تعديل
+                                                    </a>
+
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('admin.events.show', $event->id) }}">
+                                                        تفاصيل
                                                     </a>
 
                                                 </div>
@@ -150,11 +139,9 @@
                                     <th>ID</th>
                                     <th>الاسم</th>
                                     <th>النوع</th>
-                                    <th>الموقع</th>
-                                    <th>التاريخ</th>
+
                                     <th>الصورة</th>
-                                    <th>وصف</th>
-                                    <th>ملاحظات</th>
+
                                     <th>العمليات</th>
                                 </tr>
                             </thead>
@@ -174,28 +161,17 @@
                                         <td>
                                             <span class="text-nowrap">{{ $event->type }}</span>
                                         </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $event->location }}</span>
-                                        </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $event->date }}</span>
-                                        </td>
+
                                         <td>
                                             <img style="width:150px; height:150px;"src="{{ URL::asset($event->image) }}">
                                         </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $event->brive }}</span>
-                                        </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $event->notes }}</span>
-                                        </td>
+
 
                                         <td>
                                             <div class="dropdown">
                                                 <button type="button" class="btn btn-danger light sharp"
                                                     data-bs-toggle="dropdown">
-                                                    <svg width="20px" height="20px" viewBox="0 0 24 24"
-                                                        version="1.1">
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
                                                         <g stroke="none" stroke-width="1" fill="none"
                                                             fill-rule="evenodd">
                                                             <rect x="0" y="0" width="24" height="24"></rect>
@@ -222,8 +198,13 @@
                                                     </form>
 
                                                     <a class="dropdown-item"
-                                                        href="">
+                                                        href="{{ route('admin.events.edit', $event->id) }}">
                                                         تعديل
+                                                    </a>
+
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('admin.events.show', $event->id) }}">
+                                                        تفاصيل
                                                     </a>
 
                                                 </div>

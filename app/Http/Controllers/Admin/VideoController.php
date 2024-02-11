@@ -34,7 +34,7 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         $request->validateWithBag('add', [
-            'title' => 'required|string|max:255',
+            'title' => 'required|string',
             'description' => 'required',
             'date' => 'required|date',
             'link' => 'required',
@@ -73,7 +73,7 @@ class VideoController extends Controller
     public function update(Request $request, $id)
     {
         $request->validateWithBag('edit', [
-            'title' => 'required|string|max:255',
+            'title' => 'required|string',
             'description' => 'required',
             'date' => 'required|date',
             'link' => 'required',

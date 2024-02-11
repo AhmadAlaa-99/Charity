@@ -34,7 +34,7 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $request->validateWithBag('add', [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'link' => 'required|url'
         ]);
         try {
@@ -72,7 +72,7 @@ class ContactController extends Controller
     public function update(Request $request, $id)
     {
         $request->validateWithBag('edit', [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'link' => 'required|url'
         ]);
         try {

@@ -32,7 +32,7 @@ class GovernanceController extends Controller
     public function store(Request $request)
     {
         $request->validateWithBag('add', [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'date' => 'required',
             'documention' => 'required',
             'note' => 'required',
@@ -86,7 +86,7 @@ class GovernanceController extends Controller
     public function update(Request $request, $id)
     {
         $request->validateWithBag('edit', [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'date' => 'required',
             'documention' => 'required',
             'note' => 'required',
@@ -107,7 +107,7 @@ class GovernanceController extends Controller
                 if ($governance->documention) {
                     Storage::delete($governance->documention);
                 }
-                $path = $request->file('documention')->store('public/governances');
+                $path = $request->file('documention')->store('public/documentions_go');
                 $governance->documention = Storage::url($path);
             }
 
@@ -148,4 +148,18 @@ class GovernanceController extends Controller
             return redirect()->back()->with('error', 'Error occurred: ' . $e->getMessage());
         }
     }
+    public function downloadDocument($id)
+    {
+        $governance = Governance::findOrFail($id);
+        $documentionName = basename($governance->documention);
+
+        $filePath = 'public/documentions_go/' . $documentionName;
+        if (!Storage::exists($filePath)) {
+            return redirect()->back()->with('error', 'File not found.');
+        }
+        $absolutePath = Storage::path($filePath);
+        $headers = ['Content-Type' => Storage::mimeType($filePath)];
+        return response()->download($absolutePath, $documentionName, $headers);
+    }
+
 }

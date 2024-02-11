@@ -12,15 +12,15 @@ class CreateProjectsTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 			$table->string('name');
-			$table->string('description');
+			$table->text('description');
 			$table->string('category');
 			$table->string('cost');
 			$table->string('suppport_party');
-			$table->string('objective');
+			$table->text('objective');
 			$table->string('image');
 			$table->string('documention');
 			$table->string('date');
-			$table->string('note');
+			$table->text('note');
             $table->boolean('is_publish');
 		});
 	}

@@ -34,7 +34,7 @@ class CouncilController extends Controller
     public function store(Request $request)
     {
         $request->validateWithBag('add', [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'link' => 'required|url'
         ]);
@@ -78,7 +78,7 @@ class CouncilController extends Controller
     public function update(Request $request, $id)
     {
         $request->validateWithBag('edit', [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'link' => 'required|url'
         ]);

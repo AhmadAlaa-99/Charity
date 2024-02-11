@@ -38,46 +38,51 @@
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <div class="mb-3 row">
-                                            <label class="col-lg-4 col-form-label" for="validationCustom08">
+                                            <label class="col-lg-2 col-form-label" for="validationCustom08">
                                                 الاسم
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <div class="col-lg-6">
-                                                <input type="text" name="name" class="form-control" required>
+                                             <div class="col-lg-10">
+                                                <input type="text" name="name" class="form-control">
                                                 @error('name')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
-                                            <label class="col-lg-4 col-form-label" for="validationCustom08">
+                                            <label class="col-lg-2 col-form-label" for="validationCustom08">
                                                 الموقع
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <div class="col-lg-6">
-                                                <input type="text" name="location" class="form-control" required>
+                                             <div class="col-lg-10">
+                                                <input type="text" name="location" class="form-control">
                                                 @error('location')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
-                                            <label class="col-lg-4 col-form-label" for="validationCustom08">
+                                            <label class="col-lg-2 col-form-label" for="validationCustom08">
                                                 التاريخ
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <div class="col-lg-6">
-                                                <input type="date" name="date" class="form-control" required>
+                                             <div class="col-lg-10">
+                                                <input type="date" name="date" class="form-control">
                                                 @error('date')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
                                         </div>
+
+
+
+                                    </div>
+                                    <div class="col-xl-6">
                                         <div class="mb-3 row">
-                                            <label class="col-lg-4 col-form-label" for="validationCustom08"> النوع
+                                            <label class="col-lg-2 col-form-label" for="validationCustom08"> النوع
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <div class="col-lg-6">
+                                             <div class="col-lg-10">
                                                 <select class="default-select wide form-control" name="type">
                                                     <option data-display="Select">تحديد النوع</option>
                                                     <option value="type1">type1</option>
@@ -89,12 +94,12 @@
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
-                                            <label class="col-lg-4 col-form-label" for="validationCustom08">
+                                            <label class="col-lg-2 col-form-label" for="validationCustom08">
                                                 الصورة
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <div class="col-lg-6">
-                                                <input type="file" name="image" class="form-control" required>
+                                             <div class="col-lg-10">
+                                                <input type="file" name="image" class="form-control">
                                                 - 416*500
                                                 @error('image')
                                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -104,10 +109,10 @@
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
-                                            <label class="col-lg-4 col-form-label" for="validationCustom08">للنشر ؟
+                                            <label class="col-lg-2 col-form-label" for="validationCustom08">للنشر ؟
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <div class="col-lg-6">
+                                             <div class="col-lg-10">
                                                 <select class="default-select wide form-control" name="is_publish">
                                                     <option data-display="Select">للنشر؟</option>
                                                     <option value="1">نعم</option>
@@ -118,34 +123,29 @@
                                                 @enderror
                                             </div>
                                         </div>
+
                                     </div>
-                                    <div class="col-xl-6">
+                                    <div class="col-xl-12">
                                         <div class="mb-4 row">
-                                            <label class="col-lg-4 col-form-label" for="validationCustom02">وصف
+                                            <label class="col-lg-2 col-form-label" for="validationCustom02">وصف
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <div class="col-lg-6">
-
-                                                <textarea rows="5" cols="25" type="text" class="form-control" name="brive" placeholder="ادخل وصف مختصر"
-                                                    required="">
+                                            <div class="col-lg-12">
+                                                <textarea type="text" name="brive" id="editor" class="form-control" name="brive" placeholder="ادخل وصف مختصر">
                                                 </textarea>
-
                                                 @error('brive')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
-
                                             </div>
                                         </div>
                                         <div class="mb-4 row">
-                                            <label class="col-lg-4 col-form-label" for="validationCustom02">ملاحظات
+                                            <label class="col-lg-2 col-form-label" for="validationCustom02">ملاحظات
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <div class="col-lg-6">
-
-                                                <textarea rows="5" cols="25" type="text" class="form-control" name="notes"
-                                                    placeholder="ادخل وصف مختصر" required="">
+                                            <div class="col-lg-12">
+                                                <textarea type="text" cols="5" rows="5" name="notes" id="editor" class="form-control"
+                                                    placeholder="ادخل وصف مختصر">
                                                 </textarea>
-
                                                 @error('notes')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
@@ -181,9 +181,27 @@
         </div>
     </div>
     </div>
+    <script src="{{ URL::asset('dashboard/vendor/ckeditor/ckeditor.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        // تهيئة CKEditor
+        let editorInstance;
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .then(editor => {
+                editorInstance = editor;
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+        document.querySelector('form').addEventListener('submit', function() {
+            const editorData = editorInstance.getData();
+            document.querySelector('#editor').value = editorData;
+        });
+    </script>
+
 @endsection
 @section('js')
-
 @endsection

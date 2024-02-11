@@ -78,14 +78,16 @@
 
                                         <td>
                                             <div class="d-flex">
-
-                                                <a href="#" class="btn btn-primary shadow btn-xs sharp me-1 edit"
+                                                <a href="javascript:void(0);"
+                                                    class="btn btn-primary shadow btn-xs sharp me-1 edit"
                                                     data-bs-toggle="modal" data-id="{{ $partner->id }}"
                                                     data-name="{{ $partner->name }}" data-link="{{ $partner->link }}"
-                                                    {{--  --}}
-                                                    >
+                                                    data-bs-target="#edit" >
+
                                                     <i class="fas fa-pencil-alt"></i>
                                                 </a>
+
+
                                                 <a href="#" class="btn btn-danger shadow btn-xs sharp"
                                                     onclick="event.preventDefault();
                                                      document.getElementById('destroy-form-{{ $partner->id }}').submit();"><i
@@ -262,8 +264,6 @@
             </div>
         </div>
     </div>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -275,7 +275,6 @@
             @endif
         });
     </script>
-
     <script>
         $(document).ready(function() {
             @if (session('edit_id') && $errors->any())

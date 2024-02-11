@@ -56,8 +56,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>العنوان</th>
-                                    <th>وصف مختصر</th>
-                                    <th>وصف كامل</th>
+
                                     <th>التاريخ</th>
                                     <th>الصورة</th>
                                     <th>نوع الخبر</th>
@@ -75,14 +74,9 @@
                                     <tr>
                                         <td><span>#{{ $i }}</span></td>
                                         <td>
-                                            <span class="text-nowrap">{{ $new->title }}</span>
+                                            <span class="text-nowrap">{!! $new->title !!}</span>
                                         </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $new->brive_new }}</span>
-                                        </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $new->whole_new }}</span>
-                                        </td>
+
                                         <td>
                                             <span class="text-nowrap">{{ $new->date }}</span>
                                         </td>
@@ -123,12 +117,14 @@
                                                         @method('DELETE')
                                                         @csrf
                                                     </form>
-
                                                     <a class="dropdown-item"
-                                                        href="">
+                                                        href="{{ route('admin.news.edit', $new->id) }}">
                                                         تعديل
                                                     </a>
-
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('admin.news.show', $new->id) }}">
+                                                        تفاصيل
+                                                    </a>
                                                 </div>
                                             </div>
                                         </td>
@@ -146,8 +142,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>العنوان</th>
-                                    <th>وصف مختصر</th>
-                                    <th>وصف كامل</th>
+
                                     <th>التاريخ</th>
                                     <th>الصورة</th>
                                     <th>نوع الخبر</th>
@@ -165,14 +160,9 @@
                                     <tr>
                                         <td><span>#{{ $i }}</span></td>
                                         <td>
-                                            <span class="text-nowrap">{{ $new->title }}</span>
+                                            <span class="text-nowrap">{!! $new->title !!}</span>
                                         </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $new->brive_new }}</span>
-                                        </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $new->whole_new }}</span>
-                                        </td>
+
                                         <td>
                                             <span class="text-nowrap">{{ $new->date }}</span>
                                         </td>
@@ -214,8 +204,7 @@
                                                         @csrf
                                                     </form>
 
-                                                    <a class="dropdown-item"
-                                                        href="">
+                                                    <a class="dropdown-item" href="">
                                                         تعديل
                                                     </a>
 

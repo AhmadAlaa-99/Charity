@@ -32,7 +32,7 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'description' => 'required|string',
             'category' => 'required|string',
             'cost' => 'required',
@@ -50,7 +50,7 @@ class ProjectController extends Controller
                 $imageUrl = Storage::url($path);
             }
             if ($request->hasFile('documention')) {
-                $path = $request->file('documention')->store('public/documentions');
+                $path = $request->file('documention')->store('public/documentions_pro');
                 $documentionUrl = Storage::url($path);
             }
             $project = new Project();
@@ -98,7 +98,7 @@ class ProjectController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'description' => 'required|string',
             'category' => 'required|string',
             'cost' => 'required',
@@ -123,7 +123,7 @@ class ProjectController extends Controller
                 if ($project->image) {
                     Storage::delete($project->documention);
                 }
-                $path = $request->file('documention')->store('public/documentions');
+                $path = $request->file('documention')->store('public/documentions_pro');
                 $project->image = Storage::url($path);
             }
             $project->name = $validatedData['name'];
@@ -155,5 +155,18 @@ class ProjectController extends Controller
         } catch (\Exception $e) {
             return back()->withError($e->getMessage());
         }
+    }
+    public function downloadDocument($id)
+    {
+        $project = Project::findOrFail($id);
+        $documentionName = basename($project->documention);
+
+        $filePath = 'public/documentions_pro/' . $documentionName;
+        if (!Storage::exists($filePath)) {
+            return redirect()->back()->with('error', 'File not found.');
+        }
+        $absolutePath = Storage::path($filePath);
+        $headers = ['Content-Type' => Storage::mimeType($filePath)];
+        return response()->download($absolutePath, $documentionName, $headers);
     }
 }

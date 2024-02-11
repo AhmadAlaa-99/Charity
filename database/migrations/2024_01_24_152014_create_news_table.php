@@ -11,9 +11,9 @@ class CreateNewsTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 			$table->softDeletes();
-			$table->string('title');
-			$table->string('brive_new');
-			$table->string('whole_new');
+			$table->text('title');
+			$table->text('brive_new');
+			$table->text('whole_new');
 			$table->date('date');
 			$table->string('image');
 			$table->boolean('main');

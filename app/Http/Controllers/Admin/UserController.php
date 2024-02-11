@@ -37,7 +37,7 @@ class UserController extends Controller
      public function store(Request $request)
      {
          $request->validateWithBag('add', [
-             'name' => 'required|string|max:255',
+             'name' => 'required|string',
              'email' => 'required|email|unique:users,email',
              'password' => 'required|string|min:6|confirmed',
              'password_confirmation' => 'required_with:password|same:password|min:6'
@@ -81,7 +81,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $request->validateWithBag('edit', [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'nullable|string|min:6|confirmed',
             'password_confirmation' => 'nullable|required_with:password|same:password|min:6'

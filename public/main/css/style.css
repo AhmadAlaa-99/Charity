@@ -337,6 +337,7 @@ input.theme-btn.style-2 {
   background: transparent;
   color: #ffffff;
   border: 2px solid #ffffff;
+  margin-top: 21px;
 }
 .theme-btn.style-2:hover,
 .wp-block-loginout a.style-2:hover,
@@ -3516,6 +3517,7 @@ body.admin-bar .header-menu-area.sticky_menu {
   width: 100%;
   z-index: 999;
   transition: all 0.4s ease 0s;
+  direction: rtl;
 }
 .header-menu-area.sticky_menu {
   left: 0;
@@ -8014,7 +8016,7 @@ button.testimonial-arrow-btn:hover i {
 }
 .testimonial-slider-area.style-3 .testimonial-slider-wrapper .slider-card {
   position: relative;
-  background: #ffffff;
+  background: #d7c257;
   padding: 100px 54px 105px 80px;
   border-radius: 0px 0px 30px 30px;
   z-index: 20;
@@ -8226,6 +8228,7 @@ button.testimonial-arrow-btn:hover i {
   z-index: 2;
   padding: 88px 50px;
   border-radius: 50px 50px 50px 0px;
+  direction: rtl;
 }
 @media (max-width: 767px) {
   .client-area.style-1 .client-container-wrapper {
@@ -9857,14 +9860,14 @@ button.testimonial-arrow-btn:hover i {
 }
 .team-slider-area .banner:after {
   content: "";
-  background: #020a27;
+  background: rgb(148 79 74);
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.6;
+
 }
 .team-slider-area .banner .feature-item1 {
   position: absolute;
@@ -11789,7 +11792,7 @@ ul.children {
   transition: all 0.5s ease-out;
 }
 .team-member-card:hover .content-wrapper .content {
-  background-color: rgba(255, 70, 56, 0.8000000119);
+  background-color: rgb(148 79 74);
 }
 .team-member-card:hover .content-wrapper .content .title,
 .team-member-card:hover .content-wrapper .content p {
@@ -11822,7 +11825,7 @@ ul.children {
 }
 
 .slick-center .team-member-card .content-wrapper .content {
-  background-color: rgba(255, 70, 56, 0.8000000119);
+  background-color: rgb(148 79 74);
 }
 .slick-center .team-member-card .content-wrapper .content .title,
 .slick-center .team-member-card .content-wrapper .content p {
@@ -14094,6 +14097,7 @@ ul.children {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  direction: rtl;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .donate-area.style-1 {
@@ -14344,7 +14348,7 @@ ul.children {
   overflow: hidden;
 }
 .donate-form .donate-input-field {
-  padding: 22px 10px 21px 10px;
+  padding: 15px 10px 21px 10px;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 22px;
   font-weight: 500;
@@ -14361,12 +14365,14 @@ ul.children {
   }
 }
 .donate-form .input-icon {
-  width: 65px;
+  width: 150px;
   height: 60px;
   background-color: #d7c257;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #944f4a;
+  font-size: 19px;
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
   .donate-form .input-icon {
@@ -15029,7 +15035,7 @@ ul.children {
 .event-single-card .card-content-inner .content {
   position: absolute;
   bottom: 0;
-  margin-bottom: 56px;
+  margin-bottom: -5px;
 }
 .event-single-card .card-content-inner .content .content-title {
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -15044,8 +15050,8 @@ ul.children {
 }
 .event-single-card .card-content-inner .content .schedule {
   display: flex;
-  gap: 16px;
-  padding-left: 33px;
+
+  padding-left: 13px;
 }
 .event-single-card .card-content-inner .content .schedule i {
   font-size: 16px;
@@ -15243,6 +15249,7 @@ ul.children {
   margin-top: -166px;
   padding-bottom: 30px;
   background-color: #F8F8F8;
+  direction: rtl;
 }
 @media (max-width: 1199px) {
   .feature-area.style-1 {
@@ -15276,6 +15283,7 @@ ul.children {
 .about-us-area.style-1 {
   padding: 120px 0px;
   background-color: #F8F8F8;
+  direction: rtl;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .about-us-area.style-1 {
@@ -16482,7 +16490,7 @@ ul.children {
   display: flex;
   flex-direction: column;
   gap: 35px;
-  padding: 0 120px;
+  padding: 0 30px;
 }
 @media (max-width: 1400px) {
   .blog-card {

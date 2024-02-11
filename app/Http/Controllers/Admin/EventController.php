@@ -23,6 +23,7 @@ class EventController extends Controller
      */
     public function create()
     {
+
         return view('Dashboard.Events.create');
     }
     /**
@@ -30,8 +31,9 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'type' => 'required|string',
             'location' => 'required|string',
             'date' => 'required|date',
@@ -72,7 +74,8 @@ class EventController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $event = Event::where('id', $id)->first();
+        return view('Dashboard.Events.show', compact('event'));
     }
 
     /**
@@ -89,7 +92,7 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'type' => 'required|string',
             'location' => 'required|string',
             'date' => 'required|date',

@@ -57,52 +57,62 @@
         </div>
     </div>
     <!-- Preloader End !--> --}}
- <!-- Header Start !-->
- <header class="header-area style-2">
-    <div class="header-menu-area sticky-header">
-        <div class="container">
-            <div class="header-menu-area-inner">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-6 d-flex align-items-center">
-                        <div class="logo">
-                            <a href="index.html" class="standard-logo"><img
-                                    src="{{ URL::asset('main/images/logo/logo.png') }}" alt="logo" /></a>
-                            <a href="index.html" class="sticky-logo"><img
-                                    src="{{ URL::asset('main/images/logo/logo4.png') }}" alt="logo" /></a>
-                            <a href="index.html" class="retina-logo"><img
-                                    src="{{ URL::asset('main/images/logo/logo.png') }}" alt="logo" /></a>
+    <!-- Header Start !-->
+    <header class="header-area style-2">
+        <div class="header-menu-area sticky-header">
+            <div class="container">
+                <div class="header-menu-area-inner">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-6 d-flex align-items-center">
+                            <div class="logo">
+                                <a href="index.html" class="standard-logo"><img
+                                        src="{{ URL::asset('main/images/logo/logo.png') }}" alt="logo" /></a>
+                                <a href="index.html" class="sticky-logo"><img
+                                        src="{{ URL::asset('main/images/logo/logo4.png') }}" alt="logo" /></a>
+                                <a href="index.html" class="retina-logo"><img
+                                        src="{{ URL::asset('main/images/logo/logo.png') }}" alt="logo" /></a>
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        class="col-xl-9 col-lg-9 col-md-6 col-6 d-flex align-items-center justify-content-between">
-                        <div class="menu d-inline-block">
-                            <nav id="main-menu" class="main-menu">
-                                <ul>
-                                    <li class="active">
-                                        <a href="{{ route('welcome') }}">الرئيسية</a>
-                                    </li>
-                                    <li><a href="{{ route('about_us') }}">من نحن </a></li>
-                                    <li><a href="{{route('projects')}}">مشاريعنا</a></li>
-                                    <li><a href="{{route('events')}}">فعالياتنا</a></li>
-                                    <li><a href="{{ route('contact_us') }}">اتصل بنا</a></li>
-                                </ul>
-                            </nav>
+                        <div class="col-xl-9 col-lg-9 col-md-6 col-6 d-flex align-items-center justify-content-between">
+                            <div class="menu d-inline-block">
+                                <nav id="main-menu" class="main-menu">
+                                    <ul>
+                                        <li class="active">
+                                            <a href="{{ route('welcome') }}">الرئيسية</a>
+                                        </li>
+                                        <li><a href="{{ route('projects') }}">مشاريعنا</a></li>
+                                        <li><a href="{{ route('events') }}">فعالياتنا</a></li>
+                                        <li class="dropdown">
+                                            <a href="causes.html">من نحن</a>
+                                            <ul class="submenu">
+                                                <li><a href="{{ route('about_us') }}">عن الجمعية</a></li>
+                                                <li><a href="{{ route('about_us') }}">مجلس الادارة</a></li>
+                                                <li><a href="{{ route('about_us') }}">السياسات</a></li>
+                                                <li><a href="{{ route('about_us') }}">الهيكل</a></li>
+                                            </ul>
+                                        </li>
+
+
+                                        <li><a href="{{ route('governances') }}">الحوكمة</a></li>
+                                        <li><a href="{{ route('contact_us') }}">اتصل بنا</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- Header Button Start !-->
+                            <a href="donation-details.html" class="header-btn style-1 bubble">تسجيل طلب عمرة</a>
+                            <!-- Header Button Start !-->
+                            <!-- Mobile Menu Toggle Button Start !-->
+                            <div class="mobile-menu-bar  text-end">
+                                <a href="#" class="mobile-menu-toggle-btn"><i class="fal fa-bars"></i></a>
+                            </div>
+                            <!-- Mobile Menu Toggle Button End !-->
                         </div>
-                        <!-- Header Button Start !-->
-                        <a href="donation-details.html" class="header-btn style-1 bubble">تسجيل طلب عمرة</a>
-                        <!-- Header Button Start !-->
-                        <!-- Mobile Menu Toggle Button Start !-->
-                        <div class="mobile-menu-bar  text-end">
-                            <a href="#" class="mobile-menu-toggle-btn"><i class="fal fa-bars"></i></a>
-                        </div>
-                        <!-- Mobile Menu Toggle Button End !-->
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-<!-- Header End !-->
+    </header>
+    <!-- Header End !-->
     <!-- Header Start !-->
 
 
@@ -161,7 +171,7 @@
                                 <a href="index.html"><img src="{{ URL::asset('main/images/logo/logo.png') }}"
                                         alt="Footer Logo" /></a>
                             </div>
-                            <p>{{ $charity->description ?? '' }}</p>
+                            <p>{!! $charity->description ?? '' !!}</p>
                             <div class="social-profile">
                                 <a href=""><i class="fa-brands fa-facebook-f"></i></a>
                                 <a href=""><i class="fa-brands fa-twitter"></i></a>
@@ -175,10 +185,10 @@
                         <h2 class="footer-widget-title">خدماتنا</h2>
                         <div class="footer-widget-menu">
                             <ul>
-                                <li><a href=""> - </a></li>
-                                <li><a href=""> - </a></li>
-                                <li><a href=""> - </a></li>
-                                <li><a href=""> - </a></li>
+                                <li><a href=""> مشاريع الجمعية</a></li>
+                                <li><a href="">فعاليات الجمعية</a></li>
+                                <li><a href="">ملفات الحوكمة</a></li>
+                                <li><a href=""> اتصل بنا </a></li>
                             </ul>
                         </div>
                     </div>
@@ -186,13 +196,16 @@
                         <h2 class="footer-widget-title">روابط صديقة</h2>
                         <div class="footer-widget-menu">
                             <ul>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
+                                @php
+                                    $links = \App\Models\links::take(4)->get();
+                                @endphp
+                                @foreach ($links as $link)
+                                    <li><a href="{{ $link->link }}">{{ $link->name }}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
+
                     <div class="footer-widget mb-30">
                         <h2 class="footer-widget-title">تواصل معنا</h2>
                         <div class="footer-widget-contact">
@@ -288,6 +301,15 @@
     <script src="{{ URL::asset('main/js/jquery-parallax.js') }}"></script>
     <script src="{{ URL::asset('main/js/TweenMax.min.js') }}"></script>
     <script src="{{ URL::asset('main/js/custom.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            if ($('.alert-success').length) {
+                setTimeout(function() {
+                    $('.alert-success').fadeOut('slow');
+                },3000);
+            }
+        });
+        </script>
 </body>
 
 </html>

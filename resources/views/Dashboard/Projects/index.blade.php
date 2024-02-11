@@ -2,7 +2,7 @@
 @section('css')
 @endsection
 @section('title')
-    جمعية الدعوة بالمزاحمية - كافة الاخبار
+    جمعية الدعوة بالمزاحمية - كافة المشاريع
 @stop
 @section('content')
     @if (session('success'))
@@ -10,13 +10,11 @@
             {{ session('success') }}
         </div>
     @endif
-
     @if (session('error'))
         <div class="alert alert-danger">
             {{ session('error') }}
         </div>
     @endif
-    <!-- row -->
     <div class="container-fluid">
         <div class="row page-titles">
             <ol class="breadcrumb">
@@ -41,7 +39,6 @@
             </div>
             {{-- <a href="javascript:void(0);" class="btn btn-outline-primary mb-3 me-3"><i class="fa fa-add me-2 scale3"></i>
                 طباعة تقرير</a> --}}
-
             <a href="{{ route('admin.projects.create') }}" class="btn btn-outline-primary mb-3"><i
                     class="fa fa-add me-3 scale3"></i>
                 اضافة مشروع </a>
@@ -52,19 +49,18 @@
                     <div class="table-responsive fs-14">
                         <table class="table card-table display mb-4 dataTablesCard text-black" id="example5">
                             <thead>
-
                                 <tr>
                                     <th>ID</th>
                                     <th>العنوان</th>
-                                    <th>وصف</th>
+
                                     <th>الفئة</th>
                                     <th>الكلفة</th>
                                     <th>الجهة الداعمة</th>
-                                    <th>الأهداف</th>
+
                                     <th>الصورة</th>
                                     <th>الملف</th>
                                     <th>التاريخ</th>
-                                    <th>ملاحظات</th>
+
                                     <th>العمليات</th>
                                 </tr>
                             </thead>
@@ -76,24 +72,12 @@
                                     @php
                                         $i++;
                                     @endphp
-
-
-
-
-
-
-
-
-
-
                                     <tr>
                                         <td><span>#{{ $i }}</span></td>
                                         <td>
                                             <span class="text-nowrap">{{ $project->name }}</span>
                                         </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $project->description }}</span>
-                                        </td>
+
                                         <td>
                                             <span class="text-nowrap">{{ $project->category }}</span>
                                         </td>
@@ -103,21 +87,19 @@
                                         <td>
                                             <span class="text-nowrap">{{ $project->suppport_party }}</span>
                                         </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $project->objective }}</span>
-                                        </td>
+
                                         <td>
                                             <img style="width:150px; height:150px;"src="{{ URL::asset($project->image) }}">
                                         </td>
                                         <td>
-                                            <a href="javascript:void(0)" class="btn btn-success light">تحميل الملف</a>
+                                            <a href="{{ route('admin.download.document.project',$project->id) }}"
+                                                 class="btn btn-success light">تحميل الملف</a>
                                         </td>
+
                                         <td>
                                             <span class="text-nowrap">{{ $project->date }}</span>
                                         </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $project->note }}</span>
-                                        </td>
+
 
                                         <td>
                                             <div class="dropdown">
@@ -148,9 +130,13 @@
                                                         @method('DELETE')
                                                         @csrf
                                                     </form>
-
-                                                    <a class="dropdown-item" {{-- href="{{ route('admin.projects.edit', $project->id) }}" --}}>
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('admin.projects.edit', $project->id) }}">
                                                         تعديل
+                                                    </a>
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('admin.projects.show', $project->id) }}">
+                                                        تفاصيل
                                                     </a>
 
                                                 </div>
@@ -170,15 +156,15 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>العنوان</th>
-                                    <th>وصف</th>
+
                                     <th>الفئة</th>
                                     <th>الكلفة</th>
                                     <th>الجهة الداعمة</th>
-                                    <th>الأهداف</th>
+
                                     <th>الصورة</th>
                                     <th>الملف</th>
                                     <th>التاريخ</th>
-                                    <th>ملاحظات</th>
+
                                     <th>العمليات</th>
                                 </tr>
                             </thead>
@@ -195,9 +181,7 @@
                                         <td>
                                             <span class="text-nowrap">{{ $project->name }}</span>
                                         </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $project->description }}</span>
-                                        </td>
+
                                         <td>
                                             <span class="text-nowrap">{{ $project->category }}</span>
                                         </td>
@@ -207,20 +191,16 @@
                                         <td>
                                             <span class="text-nowrap">{{ $project->suppport_party }}</span>
                                         </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $project->objective }}</span>
-                                        </td>
+
                                         <td>
                                             <img style="width:150px; height:150px;"src="{{ URL::asset($project->image) }}">
                                         </td>
                                         <td>
-                                            <a href="javascript:void(0)" class="btn btn-success light">تحميل الملف</a>
+                                            <a href="{{ route('admin.download.document.project',$project->id) }}"
+                                                class="btn btn-success light">تحميل الملف</a>
                                         </td>
                                         <td>
                                             <span class="text-nowrap">{{ $project->date }}</span>
-                                        </td>
-                                        <td>
-                                            <span class="text-nowrap">{{ $project->note }}</span>
                                         </td>
 
                                         <td>

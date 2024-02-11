@@ -33,7 +33,7 @@ class SliderController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'sub_title' => 'required|string|max:255',
+            'sub_title' => 'required|string',
             'main_title' => 'required|string',
             'details' => 'required|string',
             'image' => 'required|image',
@@ -84,7 +84,7 @@ class SliderController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'sub_title' => 'required|string|max:255',
+            'sub_title' => 'required|string',
             'main_title' => 'required|string',
             'details' => 'required|string',
             'image' => 'nullable|image', // ملف الصورة اختياري في التحديث

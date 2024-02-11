@@ -61,11 +61,11 @@
 
                             <div class="post-content">
                                 <blockquote>
-                                    <p>“{{ $project->description }}”</p>
+                                    <p>“{!! $project->description !!}”</p>
                                     <footer>وصف المشروع</footer>
                                 </blockquote>
                                 <blockquote>
-                                    <p>“{{ $project->objective }}”</p>
+                                    <p>“{!! $project->objective !!}”</p>
                                     <footer>اهداف المشروع</footer>
                                 </blockquote>
                                 <blockquote>
@@ -86,30 +86,28 @@
 
                                 <div class="goals">
                                     <h1>الجهة الداعمة</h1>
-                                    <h2><span >{{ $project->suppport_party }}</span>K</h2>
+                                    <h2><span>{{ $project->suppport_party }}</span></h2>
                                 </div>
                                 <div class="divider">
                                     <div class="outline"></div>
                                 </div>
                                 <div class="goals">
                                     <h1>التاريخ</h1>
-                                    <h2><span >{{ $project->date }}</span>K</h2>
+                                    <h2><span>{{ $project->date }}</span></h2>
                                 </div>
-
-
                                 <div class="divider">
                                     <div class="outline"></div>
                                 </div>
                                 <div class="goals">
                                     <h1>الهدف</h1>
-                                    <h2>$<span class="counter">{{ $project->cost }}</span>K</h2>
+                                    <h2>$<span class="counter">{{ $project->cost }}</span></h2>
                                 </div>
                                 <div class="divider">
                                     <div class="outline"></div>
                                 </div>
                                 <div class="actions">
                                     <h1>الوصول</h1>
-                                    <h2>$<span class="counter">{{ $project->cost }}</span>K</h2>
+                                    <h2>$<span class="counter">{{ $project->cost }}</span></h2>
                                 </div>
                                 <div class="divider">
                                     <div class="outline"></div>
@@ -117,7 +115,8 @@
                                 <div class="actions">
                                     <h1>ملف المشروع</h1>
                                     <div class="button">
-                                        <a href="#" class="theme-btn style-1 bubble">تحميل</a>
+                                        <a href="{{ route('download_pro', $project->id) }}"
+                                            class="theme-btn style-1 bubble">تحميل</a>
                                     </div>
                                 </div>
                             </div>

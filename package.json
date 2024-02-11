@@ -1,7 +1,6 @@
 {
     "private": true,
     "type": "module",
-  
     "scripts": {
         "development": "mix",
         "watch": "mix watch",
@@ -18,9 +17,11 @@
         "bootstrap": "^5.2.3",
         "laravel-vite-plugin": "^1.0.1",
         "sass": "^1.56.1",
-        "vite": "^5.0.12"
+        "vite": "^5.0.12",
+        "laravel-mix": "^6.0.6"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-build-classic": "^41.0.0",
         "save-dev": "^0.0.1-security"
     }
 }

@@ -12,8 +12,8 @@ class CreateSlidersTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 			$table->string('sub_title');
-			$table->string('main_title');
-            $table->string('details');
+			$table->text('main_title');
+            $table->text('details');
 			$table->string('image');
 			$table->boolean('is_publish');
 		});

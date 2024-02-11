@@ -36,7 +36,7 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         $request->validateWithBag('add', [
-            'qualification' => 'required|string|max:255',
+            'qualification' => 'required|string',
             'date' => 'required',
             'wage' => 'required',
             'grant' => 'required',
@@ -75,7 +75,7 @@ class EmployeeController extends Controller
     public function update(Request $request, $id)
     {
         $request->validateWithBag('edit', [
-            'qualification' => 'required|string|max:255',
+            'qualification' => 'required|string',
             'date' => 'required',
             'wage' => 'required',
             'grant' => 'required',

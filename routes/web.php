@@ -3,10 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\NewController;
+use App\Http\Controllers\Admin\LinkController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\ImageController;
+use App\Http\Controllers\Admin\UmrahController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ContactController;
@@ -16,7 +18,9 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\Admin\MuamtariController;
 use App\Http\Controllers\Admin\GovernanceController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,11 +43,15 @@ Route::get('/contact_us', [App\Http\Controllers\MainController::class, 'contact_
 Route::get('/projects', [App\Http\Controllers\MainController::class, 'projects'])->name('projects');
 Route::post('/umrah_request', [App\Http\Controllers\MainController::class, 'umrah_request'])->name('umrah_request');
 Route::get('/events', [App\Http\Controllers\MainController::class, 'events'])->name('events');
+Route::get('/governances', [App\Http\Controllers\MainController::class, 'governances'])->name('governances');
+
 Route::get('/news', [App\Http\Controllers\MainController::class, 'news'])->name('news');
 Route::get('/images', [App\Http\Controllers\MainController::class, 'images'])->name('images');
 Route::get('/channel', [App\Http\Controllers\MainController::class, 'channel'])->name('channel');
 Route::get('/about_us', [App\Http\Controllers\MainController::class, 'about_us'])->name('about_us');
 Route::get('/project_details/{id}', [App\Http\Controllers\MainController::class, 'project_details'])->name('project_details');
+Route::get('/download_go/{documention}', [MainController::class, 'download_go'])->name('download_go');
+Route::get('/download_pro/{documention}', [MainController::class, 'download_pro'])->name('download_pro');
 
 Auth::routes();
 Route::group([
@@ -54,6 +62,11 @@ Route::group([
     Route::get('/statistics', [SettingController::class, 'statistics'])->name('statistics');
     Route::get('/profile', [SettingController::class, 'profile'])->name('profile');
     Route::any('/update_profile', [SettingController::class, 'update_profile'])->name('update_profile');
+
+    Route::get('/muamtaris', [MuamtariController::class, 'muamtaris'])->name('muamtaris');
+    Route::any('/accept/{id}', [MuamtariController::class, 'accept'])->name('accept');
+    Route::any('/reject/{id}', [MuamtariController::class, 'reject'])->name('reject');
+
 
     Route::get('/statistics', [SettingController::class, 'statistics'])->name('statistics');
     Route::get('/charity_profile', [SettingController::class, 'charity_profile'])->name('charity_profile');
@@ -75,6 +88,15 @@ Route::group([
     Route::resource('sliders', SliderController::class);
     Route::resource('sections', SectionController::class);
     Route::resource('images', ImageController::class);
+    Route::resource('umrahs', UmrahController::class);
+    Route::resource('links', LinkController::class);
+
+    Route::get('/download-document/{documention}', [GovernanceController::class, 'downloadDocument'])->name('download.document');
+    Route::get('/download-document-PROJECT/{documention}', [ProjectController::class, 'downloadDocument'])->name('download.document.project');
+
+
+
+
 });
 Route::get('/clear', function () {
     $exitCode = Artisan::call('cache:clear');

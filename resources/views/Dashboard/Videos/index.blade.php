@@ -67,13 +67,6 @@
                                     @php
                                         $i++;
                                     @endphp
-
-
-
-
-
-
-
                                     <tr>
                                         <td><span>#{{ $i }}</span></td>
                                         <td>
@@ -89,20 +82,16 @@
                                             <span class="text-nowrap">{{ $video->link }}</span>
                                         </td>
                                         <td>
-                                            <span class="text-nowrap">{{ $video->type }}</span>
+                                            <span class="text-nowrap">{{ $video->type == 'channel' ? 'قناة' : 'فيديو' }}</span>
                                         </td>
-
                                         <td>
                                             <span class="text-nowrap">
                                                 {{ $video->is_publication ? 'عام' : 'خاص' }}
                                             </span>
                                         </td>
-
-
                                         <td>
                                             <span class="text-nowrap">{{ $video->notes }}</span>
                                         </td>
-
                                         <td>
                                             <div class="d-flex">
 
@@ -113,7 +102,9 @@
                                                     data-date="{{ $video->date }}" data-link="{{ $video->link }}"
                                                     data-type="{{ $video->type }}"
                                                     data-is_publication="{{ $video->is_publication }}"
-                                                    data-notes="{{ $video->notes }}" >
+                                                    data-notes="{{ $video->notes }}"
+                                                    data-bs-target="#edit"
+                                                    >
                                                     <i class="fas fa-pencil-alt"></i>
                                                 </a>
                                                 <a href="#" class="btn btn-danger shadow btn-xs sharp"
@@ -154,12 +145,12 @@
                         @csrf
                         <div class="row">
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom01">العنوان
+                                <label class="col-lg-2 col-form-label" for="validationCustom01">العنوان
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <input type="text" class="form-control" id="validationCustom01" placeholder=""
-                                        value=""name="title" required="">
+                                        name="title" required="">
                                     @error('title', 'add')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -169,12 +160,12 @@
                                 </div>
                             </div>
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom01">الوصف
+                                <label class="col-lg-2 col-form-label" for="validationCustom01">الوصف
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <textarea cols="5" rows="5"type="text" class="form-control" id="validationCustom01" placeholder=""
-                                        value=""name="description" required="">
+                                        name="description" required="">
                                     </textarea>
                                     @error('description', 'add')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -184,15 +175,13 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom01">الرابط
+                                <label class="col-lg-2 col-form-label" for="validationCustom01">الرابط
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
+                                <div class="col-lg-10">
                                     <input type="text" class="form-control" id="validationCustom01" placeholder=""
-                                        value=""name="link" required="">
+                                        name="link" required="">
                                     @error('link', 'add')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -201,21 +190,49 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="input-group mb-3">
+                                <label class="col-lg-2 col-form-label" for="validationCustom01">النوع
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-10">
+                                    <select class="default-select wide form-control" name="type">
+                                        <option data-display="Select">نوع الرابط</option>
+                                        <option value="channel">قناة</option>
+                                        <option value="video">فيديو</option>
+                                    </select>
+                                    @error('type', 'add')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                    <div class="invalid-feedback">
 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group mb-2">
+                                <label class="col-lg-2 col-form-label" for="validationCustom09">ملاحظات
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-10">
+                                    <textarea type="text" name="notes" cols="5" rows="5" class="form-file-input form-control"
+                                        required>
 
+                                    </textarea>
 
-
-
+                                    @error('notes', 'add')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                    <div class="invalid-feedback">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="mb-5 col-md-6">
-
-
                                 <div class="input-group mb-3">
                                     <label class="col-lg-4 col-form-label" for="validationCustom01">التاريخ
                                         <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-8">
                                         <input type="date" class="form-control" id="validationCustom01"
-                                            placeholder="" value=""name="date" required="">
+                                            placeholder="" name="date" required="">
                                         @error('date', 'add')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -224,24 +241,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="input-group mb-3">
-                                    <label class="col-lg-4 col-form-label" for="validationCustom01">النوع
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <div class="col-lg-8">
-                                        <select class="default-select wide form-control" name="type">
-                                            <option data-display="Select">نوع الرابط</option>
-                                            <option value="channel">قناة</option>
-                                            <option value="video">فيديو</option>
-                                        </select>
-                                        @error('type', 'add')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                        <div class="invalid-feedback">
 
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="mb-5 col-md-6">
 
@@ -265,23 +265,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="input-group mb-3">
-                                    <label class="col-lg-4 col-form-label" for="validationCustom09">ملاحظات
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <div class="col-lg-8">
-                                        <textarea type="text" name="notes" cols="5" rows="5" class="form-file-input form-control"
-                                            required>
 
-                                        </textarea>
-
-                                        @error('notes', 'add')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                        <div class="invalid-feedback">
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="mb-3 mb-0">
@@ -301,7 +285,7 @@
             <div class="modal-content">
                 <!-- رأس المودال -->
                 <div class="modal-header">
-                    <h5 class="modal-title">تعديل الشريك</h5>
+                    <h5 class="modal-title">تعديل بيانات الفيديو</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <!-- جسم المودال -->
@@ -310,15 +294,13 @@
                         @csrf
                         @method('patch')
                         <div class="row">
-
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom01">العنوان
+                                <label class="col-lg-2 col-form-label" for="validationCustom01">العنوان
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="title" name="title"
-                                        required="">
-                                    <input type="hidden" id="edit_id" name="id">
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="title" value=""
+                                        name="title" required="">
                                     @error('title', 'edit')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -327,14 +309,14 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom01">الوصف
+                                <label class="col-lg-2 col-form-label" for="validationCustom01">الوصف
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="validationCustom01" placeholder=""
-                                        value=""name="description" required="">
+                                <div class="col-lg-10">
+                                    <textarea cols="5" rows="5"type="text" class="form-control" id="description" placeholder=""
+                                        name="description" required="">
+                                    </textarea>
                                     @error('description', 'edit')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -343,15 +325,13 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="input-group mb-3">
-                                <label class="col-lg-4 col-form-label" for="validationCustom01">الرابط
+                                <label class="col-lg-2 col-form-label" for="validationCustom01">الرابط
                                     <span class="text-danger">*</span>
                                 </label>
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="validationCustom01" placeholder=""
-                                        value=""name="link" required="">
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="link" placeholder=""
+                                        name="link" required="">
                                     @error('link', 'edit')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -360,18 +340,49 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="input-group mb-3">
+                                <label class="col-lg-2 col-form-label" for="validationCustom01">النوع
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-10">
+                                    <select class="default-select wide form-control" name="type">
+                                        <option data-display="Select">نوع الرابط</option>
+                                        <option value="channel">قناة</option>
+                                        <option value="video">فيديو</option>
+                                    </select>
+                                    @error('type', 'edit')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                    <div class="invalid-feedback">
 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group mb-2">
+                                <label class="col-lg-2 col-form-label" for="validationCustom09">ملاحظات
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-10">
+                                    <textarea type="text" name="notes" id="notes" cols="5" rows="5" class="form-file-input form-control"
+                                        required>
 
+                                    </textarea>
+
+                                    @error('notes', 'edit')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                    <div class="invalid-feedback">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="mb-5 col-md-6">
-
-
                                 <div class="input-group mb-3">
                                     <label class="col-lg-4 col-form-label" for="validationCustom01">التاريخ
                                         <span class="text-danger">*</span>
                                     </label>
-                                    <div class="col-lg-6">
-                                        <input type="date" class="form-control" id="validationCustom01"
-                                            placeholder="" value=""name="date" required="">
+                                    <div class="col-lg-8">
+                                        <input type="date" class="form-control" id="date"
+                                            value="" name="date" required="">
                                         @error('date', 'edit')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -380,31 +391,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="input-group mb-3">
-                                    <label class="col-lg-4 col-form-label" for="validationCustom01">النوع
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <div class="col-lg-6">
-                                        <input type="type" class="form-control" id="validationCustom01"
-                                            placeholder="" value=""name="type" required="">
-                                        @error('type', 'edit')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                        <div class="invalid-feedback">
 
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="mb-5 col-md-6">
+
+
 
                                 <div class="input-group mb-3">
                                     <label class="col-lg-4 col-form-label" for="validationCustom01">للنشر؟
                                         <span class="text-danger">*</span>
                                     </label>
-                                    <div class="col-lg-6">
-                                        <input type="text" class="form-control" id="validationCustom01"
-                                            placeholder="" value=""name="is_publication" required="">
+                                    <div class="col-lg-8">
+                                        <select class="default-select wide form-control" name="is_publication" id="is_publication">
+                                            <option data-display="Select">للنشر؟</option>
+                                            <option value="1">نعم</option>
+                                            <option value="0">لا</option>
+                                        </select>
                                         @error('is_publication', 'edit')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -413,23 +415,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="input-group mb-3">
-                                    <label class="col-lg-4 col-form-label" for="validationCustom09">ملاحظات
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <div class="col-lg-6">
-                                        <input type="text" name="notes" accept="images/*"
-                                            class="form-file-input form-control" required>
-                                        @error('notes', 'edit')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                        <div class="invalid-feedback">
 
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-
                             <div class="col-lg-12">
                                 <div class="mb-3 mb-0">
                                     <input type="submit" value="تأكيد التعديل" class="submit btn btn-primary"
@@ -455,25 +442,57 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
-            @if (session('edit_id') && $errors->any())
-                $('#edit').modal('show');
-            @endif
-            $('.edit').click(function() {
-                $('#edit .text-danger').remove();
-                var Id = $(this).data('id');
-                var name = $(this).data('name');
-                var link = $(this).data('link');
+        // $(document).ready(function() {
+        //     @if (session('edit_id') && $errors->any())
+        //         $('#edit').modal('show');
+        //     @endif
+        //     $('.edit').click(function() {
+        //         $('#edit .text-danger').remove();
+        //         var Id = $(this).data('id');
+        //         var title = $(this).data('title');
+        //         var description = $(this).data('description');
+        //         var date = $(this).data('date');
+        //         var type = $(this).data('type');
+        //         var is_publication = $(this).data('is_publication');
+        //         var notes = $(this).data('notes');
 
-                $('#edit_id').val(Id);
-                $('#edit input[name="name"]').val(name);
-                $('#edit input[name="link"]').val(link);
+        //         $('#edit_id').val(Id);
+        //         $('#edit input[name="title"]').val(title);
+        //         $('#edit textarea[name="description"]').val(description);
+        //         $('#edit input[name="date"]').val(date);
+        //         $('#edit select[name="type"]').val(type);
+        //         $('#edit select[name="is_publication"]').val(is_publication);
+        //         $('#edit textarea[name="notes"]').val(notes);
 
-                var updateUrl = "{{ url('admin/videos') }}/" + Id;
-                $('#edit_form').attr('action', updateUrl);
-            });
+        //         var updateUrl = "{{ url('admin/videos') }}/" + Id;
+        //         $('#edit_form').attr('action', updateUrl);
+        //     });
 
-        });
+        // });
+        $('.edit').click(function() {
+    var id = $(this).data('id');
+    var title = $(this).data('title');
+    var description = $(this).data('description');
+    var date = $(this).data('date');
+    var link = $(this).data('link');
+    var type = $(this).data('type');
+    var is_publication = $(this).data('is_publication');
+    var notes = $(this).data('notes');
+
+    // تحديث قيم العناصر في النموذج
+    $('#edit_form').find('input[name="title"]').val(title);
+    $('#edit_form').find('textarea[name="description"]').val(description);
+    $('#edit_form').find('input[name="date"]').val(date);
+    $('#edit_form').find('input[name="link"]').val(link);
+    $('#edit_form').find('select[name="type"]').val(type);
+    $('#edit_form').find('select[name="is_publication"]').val(is_publication.toString());
+    $('#edit_form').find('textarea[name="notes"]').val(notes);
+
+    // تحديث ال action للنموذج بناءً على ID
+    var actionUrl = "{{ route('admin.videos.update', '') }}/" + id;
+    $('#edit_form').attr('action', actionUrl);
+});
+
     </script>
     <script>
         $(document).ready(function() {

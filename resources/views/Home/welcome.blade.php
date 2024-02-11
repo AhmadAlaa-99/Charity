@@ -4,56 +4,52 @@
 @section('title')
 @endsection
 @section('content')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
     <!-- Slider Section Start !-->
     <div class="slider-area style-2" id="slider-area" style="background-image: url('main/images/slider/home-slider-img1.png')">
         <div class="slider-wrapper">
             @forelse ($sliders as $slider)
-            <div class="single-slider-wrapper">
-                <div class="single-slider">
-                    <div class="slider-overlay"></div>
-                    <div class="top-shape"><img src="main/images/header-slider-2/shape1.svg" alt="Shape"></div>
-                    <div class="bottom-shape"><img src="main/images/header-slider-2/shape2.svg" alt="Shape"></div>
-                    <div class="container  align-self-center">
-                        <div class="single-slider-inner">
-                            <div class="row ">
-                                <div class="col-md-7 col-12 align-self-center order-2 order-md-1">
-                                    <div class="slider-content-wrapper">
-                                        <div class="slider-content">
-                                            <span class="slider-short-title">{{ $slider->main_title }}</span>
-                                            {{ $slider->sub_title }}
-                                            <h1 class="slider-title"><span>{{ $slider->details }}</span>
+                <div class="single-slider-wrapper">
+                    <div class="single-slider">
+                        <div class="slider-overlay"></div>
+                        <div class="container  align-self-center">
+                            <div class="single-slider-inner">
+                                <div class="row ">
+                                    <div class="col-md-7 col-12 align-self-center order-2 order-md-1">
+                                        <div class="slider-content-wrapper">
+                                            <div class="slider-content">
+                                                <span class="slider-short-title">{!! $slider->main_title !!}</span>
+                                                {!! $slider->sub_title !!}
+                                                <h1 class="slider-title"><span>{!! $slider->details !!}</span>
                                                 </h1>
-                                            <div class="slider-btn-wrapper style-2">
-                                                <a href="" class="theme-btn style-1 bubble">تسجيل طلب عمرة</a>
-                                                <a href="{{ route('contact_us') }}" class="theme-btn style-2 bubble">اتصل بنا</a>
+
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4 col-12 align-self-center order-1 order-md-2">
-                                    <div class="slider-image">
-                                        <div class="bottom-shape2"><img src="main/images/shape/ornament-dots.png" alt="">
+                                    <div class="col-md-4 col-12 align-self-center order-1 order-md-2">
+                                        <div class="slider-image">
+
+                                            <img style="width:500px; height:500px;" src="{{ $slider->image }}"
+                                                alt="feature image" />
                                         </div>
-                                        <img style="width:500px; height:500px;" src="{{ $slider->image }}" alt="feature image" />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @empty
             @endforelse
 
         </div>
     </div>
-
-
     <!-- Slider bottom Shape !-->
     <div class="slider-bottom-shape">
         <img src="{{ URL::asset('main/images/slider-3/Subtract.svg') }}" alt="">
     </div>
-
     <!-- Feature Area Start-->
     <div class="feature-area style-1">
         <div class="container">
@@ -63,7 +59,6 @@
                     <div class="info-card ">
                         <div class="card-inner">
                             <div class="image-wrapper">
-                                <img src="{{ URL::asset('main/images/feature/card-bg-4.jpg') }}" alt="">
                             </div>
                             <div class="content-wrapper">
                                 <div class="title-wrapper">
@@ -73,12 +68,12 @@
                                     <h3><a href="#" class="title">رؤيتنا</a></h3>
                                 </div>
                                 <div class="content">
-                                    <p class="desc">{{ $charity->vision ?? '-' }}</p>
+                                    <p class="desc">{!! $charity->vision ?? '-' !!}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="read-more">
-                            <a href="#">
+                            <a href="{{ route('about_us') }}">
                                 <span class="icon">
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </span>
@@ -92,7 +87,7 @@
                     <div class="info-card ">
                         <div class="card-inner">
                             <div class="image-wrapper">
-                                <img src="{{ URL::asset('main/images/feature/card-bg-2.jpg') }}" alt="">
+
                             </div>
                             <div class="content-wrapper">
                                 <div class="title-wrapper">
@@ -102,12 +97,13 @@
                                     <h3><a href="#" class="title">رسالتنا</a></h3>
                                 </div>
                                 <div class="content">
-                                    <p class="desc">{{ $charity->message ?? '' }}</p>
+
+                                    <p class="desc">{!! $charity->message ?? '' !!}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="read-more">
-                            <a href="#">
+                            <a href="{{ route('about_us') }}">
                                 <span class="icon">
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </span>
@@ -121,7 +117,7 @@
                     <div class="info-card ">
                         <div class="card-inner">
                             <div class="image-wrapper">
-                                <img src="{{ URL::asset('main/images/feature/card-bg-3.jpg') }}" alt="">
+
                             </div>
                             <div class="content-wrapper">
                                 <div class="title-wrapper">
@@ -131,12 +127,12 @@
                                     <h3><a href="#" class="title">قيمنا</a></h3>
                                 </div>
                                 <div class="content">
-                                    <p class="desc">{{ $charity->message ?? '-' }}</p>
+                                    <p class="desc">{!! $charity->value ?? '-' !!}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="read-more">
-                            <a href="#">
+                            <a href="{{ route('about_us') }}">
                                 <span class="icon">
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </span>
@@ -150,7 +146,7 @@
                     <div class="info-card ">
                         <div class="card-inner">
                             <div class="image-wrapper">
-                                <img src="{{ URL::asset('main/images/feature/card-bg-1.jpg') }}" alt="">
+
                             </div>
                             <div class="content-wrapper">
                                 <div class="title-wrapper">
@@ -160,12 +156,12 @@
                                     <h3><a href="#" class="title">أهدافنا</a></h3>
                                 </div>
                                 <div class="content">
-                                    <p class="desc">{{ $charity->objective ?? '' }}</p>
+                                    <p class="desc">{!! $charity->objectives ?? '' !!}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="read-more">
-                            <a href="#">
+                            <a href="{{ route('about_us') }}">
                                 <span class="icon">
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </span>
@@ -187,34 +183,40 @@
                 <div class="col-xl-7 col-12 ">
                     <!-- About Us Image Wrapper Start -->
                     <div class="about-us-image-wrapper">
-                        <div class="shape-1"><img src="{{ URL::asset('main/images/about/circle.png') }}" alt="shape">
-                        </div>
-                        <div class="first-wrapper">
-                            <div class="image-1">
-                                <div class="sketch-1"><img src="{{ URL::asset('main/images/about/ornament.png') }}"
-                                        alt="shape"></div>
-                                <div class="sketch-2"><img src="{{ URL::asset('main/images/about/half-circl.png') }}"
-                                        alt="shape"></div>
-                                <div class="img-wrapper"><img src="{{ URL::asset('main/images/about/img-1.jpg') }}"
-                                        alt="about-us"></div>
+                        @if ($events->count() > 0)
+                            <div class="first-wrapper">
+                                @if ($events[0])
+                                    <div class="image-1">
+                                        <div class="img-wrapper"><img src="{{ URL::asset($events[0]->image) }}"
+                                                alt="about-us"></div>
+                                    </div>
+                                @endif
+                                @if ($events->count() > 1)
+                                    <div class="image-2">
+                                        <div class="img-wrapper"><img src="{{ URL::asset($events[1]->image) }}"
+                                                alt="about-us"></div>
+                                    </div>
+                                @endif
                             </div>
-                            <div class="image-2">
-                                <div class="sketch-3"><img src="{{ URL::asset('main/images/about/half-circl-2.png') }}"
-                                        alt="shape"></div>
-                                <div class="img-wrapper"><img src="{{ URL::asset('main/images/about/img-2.jpg') }}"
-                                        alt="about-us"></div>
+
+                            <div class="second-wrapper">
+                                @if ($events->count() > 2)
+                                    <div class="image-3">
+                                        <div class="img-wrapper"><img src="{{ URL::asset($events[2]->image) }}"
+                                                alt="about-us"></div>
+                                    </div>
+                                @endif
+                                @if ($events->count() > 3)
+                                    <div class="image-4">
+                                        <div class="img-wrapper"><img src="{{ URL::asset($events[3]->image) }}"
+                                                alt="about-us"></div>
+                                    </div>
+                                @endif
                             </div>
-                        </div>
-                        <div class="second-wrapper">
-                            <div class="image-3">
-                                <div class="img-wrapper"><img src="{{ URL::asset('main/images/about/img-3.png') }}"
-                                        alt="about-us"></div>
-                            </div>
-                            <div class="image-4">
-                                <div class="img-wrapper"><img src="{{ URL::asset('main/images/about/img-4.jpg') }}"
-                                        alt="about-us"></div>
-                            </div>
-                        </div>
+                        @else
+                            <p>No recent events to display.</p>
+                        @endif
+
                     </div>
                     <!-- About Us Image Wrapper End -->
                 </div>
@@ -237,9 +239,9 @@
                                                 </text>
                                             </svg>
                                         </div>
-                                        <div class="inner">
+                                        {{-- <div class="inner">
                                             <p><span class="counter">380</span>+</p>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -247,7 +249,7 @@
                         <div class="section-title">
                             <span class="short-title">جمعية الدعوة بالمزاحمية</span>
                             <h2 class="title">التعريف بالجمعية</h2>
-                            <p class="desc">{{ $charity->description ?? '-' }}</p>
+
                         </div>
                         <div class="about-us-list">
                             <div class="list-item">
@@ -255,7 +257,7 @@
                                         alt="icon"></div>
                                 <div class="content-wrapper">
                                     <h5 class="title">من نحن</h5>
-                                    <p class="desc">{{ $charity->description ?? '-' }}</p>
+                                    <p class="desc">{!! $charity->description ?? '-' !!}</p>
                                 </div>
                             </div>
                             <div class="list-item">
@@ -263,8 +265,8 @@
                                     <img src="{{ URL::asset('main/images/about/icon-hand.png') }}" alt="icon">
                                 </div>
                                 <div class="content-wrapper">
-                                    <h5 class="title">الفئات المستهدفة</h5>
-                                    <p class="desc">{{ $charity->description ?? '-' }}</p>
+                                    <h5 class="title">نبذة عن الجمعية</h5>
+                                    <p class="desc">{!! $charity->description ?? '-' !!}</p>
                                 </div>
                             </div>
                             <div class="about-btn">
@@ -321,7 +323,7 @@
                         alt="counter-logo">
                     <div class="counter-inner">
                         <h2 class="counter m-0">{{ \App\Models\Employee::count() }}</h2>
-                        <span>K</span>
+                        <span>+</span>
                     </div>
                     <p class="title m-0">الموظفين</p>
                 </div>
@@ -335,9 +337,9 @@
                         alt="counter-logo">
                     <div class="counter-inner">
                         <h2 class="counter m-0">{{ \App\Models\Partner::count() }}</h2>
-                        <span>K</span>
+                        <span>+</span>
                     </div>
-                    <p class="title m-0">شؤكائنا</p>
+                    <p class="title m-0">شركائنا</p>
                 </div>
                 <!-- Single Counter End -->
             </div>
@@ -362,6 +364,7 @@
                                 <a href="{{ $partner->link }}">
                                     <img style="width:160px; height:100px;" src="{{ URL::asset($partner->logo) }}"
                                         alt="{{ $partner->name }}">
+                                    <p class="title m-0">{{ $partner->name }}</p>
                                 </a>
                             </div>
                         @endif
@@ -377,6 +380,7 @@
                             <a href="{{ $partner->link }}">
                                 <img style="width:160px; height:100px;" src="{{ URL::asset($partner->logo) }}"
                                     alt="{{ $partner->name }}">
+                                <p class="title m-0">{{ $partner->name }}</p>
                         </div>
                     @endif
                 @empty
@@ -391,10 +395,7 @@
     <!-- Client Area End -->
     <!--Causes Area Style-1 Start -->
     <div class="causes-area style-1" id="causes-area">
-        <div class="feature-shape"><img src="{{ URL::asset('main/images/causes-area/circle.png') }}" alt="Shape">
-        </div>
-        <div class="feature-shape-2"><img src="{{ URL::asset('main/images/causes-area/heart.png') }}" alt="Shape">
-        </div>
+
         <div class="container">
             <div class="title-area">
                 <div class="section-title">
@@ -460,83 +461,123 @@
     <!--Causes Area Style-1 End -->
 
     <!-- Donate-area style-1 Card section start !-->
-    <div class="donate-area style-1" style="background-image: url('images/section-bg/donate-area.png')">
-        <div class="feature-shape"><img src="{{ URL::asset('main/images/donate-area/spiral.svg') }}" alt="Shape">
-        </div>
-        <div class="sketch-1"><img src="{{ URL::asset('main/images/shape/slice-white.png') }}" alt="sketch"></div>
+    <div id="umrah-form" class="donate-area style-1" style="background-image: url('images/section-bg/donate-area.png')">
+
+        {{-- <div class="sketch-1"><img src="{{ URL::asset('main/images/shape/slice-white.png') }}" alt="sketch"></div> --}}
         <div class="overlay"></div>
         <div class="container">
             <div class="row gy-4 justify-content-between">
                 <div class="col-lg-5 order-2 order-lg-1">
                     <div class="section-title">
-                        <span class="short-title">قريبا...</span>
-                        {{-- <h2 class="title">Let’s donate to needy people for better lives</h2>
-                        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget augue lorem
-                            ipsum dolor sit amet, con secte adipis elitui sque eget augue.Lorem ipsum dolor sit amet, con
-                            sectetur adipiscing elit. Quisque eget augue ante, sed bibendum.</p> --}}
+                        <span class="short-title">تسجيل طلب لأداء العمرة مع جمعية الدعوة بالمزاحمية</span>
+                        <h2 class="title">نموذج إجراء طلب العمرة </h2>
+                        <p class="desc">مرحباً بك في قسم تسجيل طلبات العمرة لجمعية جمعية الدعوة بالمزاحمية. نحن هنا لنوفر
+                            لك كل الدعم اللازم لتحقيق رحلة عمرة مباركة وميسرة. اتبع الخطوات البسيطة أدناه لتسجيل طلبك.
+
+                        </p>
                     </div>
-                    {{-- <div><a class="theme-btn style-1 bubble" href="">تسجبل طلب </a></div> --}}
+
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <div class="donate-form">
-                        <p class="sub-title">تسجيل طلب عمرة</p>
-                        <h2 class="typewrite form-title " data-period="1500"
-                            data-type='[ "تسجيل طلب عمرة","سجل الان","تسجيل طلب عمرة" ]'>سجل الان</h2>
-                        <p class="desc">قريبا.</p>
-                        {{-- <div class="progress-wrapper">
-                            <div class="donate-skill-progressbar">
-                                <div class="progress-inner" data-percentage="50%">
-                                    <div class="sub-title">
-                                        <span>Goals</span>
-                                        <span>Raised</span>
+                    <form action="{{ route('umrah_request') }}" method="POST">
+                        @csrf
+                        <div class="donate-form">
+                            {{-- <p class="sub-title">تسجيل طلب عمرة</p> --}}
+                            <h2 class="typewrite form-title " data-period="1500"
+                                data-type='[ "تسجيل طلب عمرة","سجل الان","تسجيل طلب عمرة" ]'></h2>
+                            {{-- <p class="desc">قريبا.</p> --}}
+                            @if (Session::has('success'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ Session::get('success') }}
+                                </div>
+                            @endif
+                            <div class="input-wrapper">
+                                <span class="input-icon">الاسم</span>
+                                <input type="text" name="name" class="donate-input-field"
+                                    placeholder="يرجى ادخال الاسم الكامل"required>
+                            </div>
+                            <div class="input-wrapper">
+                                <span class="input-icon">رقم الهوية</span>
+                                <input type="number" name="number" class="donate-input-field"
+                                    placeholder="يرجى ادخال رقم الهوية" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <span class="input-icon">الجنس</span>
+                                <style>
+                                    .check-mark {
+                                        display: flex;
+                                    }
+
+                                    .single-item {
+                                        display: flex;
+                                        /* يضمن هذا ظهور العناصر بجانب بعضها */
+                                        align-items: center;
+                                        /* يوحد محاذاة العناصر عموديًا */
+                                        margin-right: 20px;
+                                        /* تضيف مسافة بين كل مجموعة */
+                                    }
+
+                                    .single-item label {
+                                        margin-left: 5px;
+                                        /* تضيف مسافة بين الزر والنص */
+                                        padding: 4px;
+
+                                    }
+                                </style>
+                                <div class="check-mark">
+                                    <div class="single-item">
+                                        <input type="radio" id="text_donation" name="gender" value="HTML">
+                                        <label for="text_donation">ذكر</label>
                                     </div>
-                                    <div class="title-wrapper">
-                                        <h5 class="title">$82,000</h5>
-                                        <h5 class="title">$75,000</h5>
-                                    </div>
-                                    <div class="progress-content-outter">
-                                        <div class="progress-content"></div>
-                                        <div class="circle"></div>
+                                    <div class="single-item">
+                                        <input type="radio" id="cardiant_doantion" name="gender" value="HTML">
+                                        <label for="cardiant_doantion">انثى</label>
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
-                        {{-- <div class="input-wrapper">
-                            <span class="input-icon"><i class="fa-solid fa-dollar-sign"></i></span>
-                            <input type="text" class="donate-input-field" id="donate-input-field"
-                                placeholder="Selected Value">
+                            <div class="input-wrapper">
+                                <span class="input-icon">الجنسية</span>
+                                <select class="donate-input-field" name="nationality_id" required>
+                                    <option data-display="Select">تحديد الجنسية</option>
+                                    @foreach ($nationalities as $nationality)
+                                        <option value="{{ $nationality->id }}">{{ $nationality->name }}</option>
+                                    @endforeach
+                                </select>
+
+                            </div>
+                            <div class="input-wrapper">
+                                <span class="input-icon">اخر مرة اعتمرت</span>
+                                <input type="date" name="last" class="donate-input-field" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <span class="input-icon">المواليد</span>
+                                <input type="date"name="birth_date" class="donate-input-field" required>
+                            </div>
+                            <div class="input-wrapper">
+                                <span class="input-icon">افراد العائلة</span>
+                                <input type="number" name="members" class="donate-input-field"
+                                    placeholder="يرجى ادخال عدد افراد العائلة" required>
+                            </div>
+                            <div><button type="submit" class="theme-btn style-2 bubble-yellow">تأكيد التسجيل</button>
+                            </div>
                         </div>
-                        <ul id="value-list" class="value-list">
-                            <li class="value">$15</li>
-                            <li class="value">$25</li>
-                            <li class="value">$50</li>
-                            <li class="value active">$100</li>
-                            <li class="value">$250</li>
-                            <li class="value">$350</li>
-                            <li class="value">$400</li>
-                            <li class="value" id="custom-amount">Set amount</li>
-                        </ul>
-                        <div><button type="submit" class="theme-btn style-2 bubble-yellow"> Donate Now</button></div> --}}
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
     <!-- Donate-area style-1 Card section end !-->
-
-
     <!-- Event Slider Area Start -->
     <div class="event-slider style-1" id="event-slider">
-        <img class="shape-1" src="{{ URL::asset('main/images/causes-area/shape-1.svg') }}" alt="Shape">
         <div class="container">
             <div class="row gy-5">
-                <div class=" col-12 col-lg-4 section-title">
+                {{-- <div class=" col-12 col-lg-4 section-title">
                     <span class="short-title">احدث فعاليات الجمعية</span>
                     <h2 class="title">فعالياتنا</h2>
                     <p class="desc">استكشف فعاليات
                     </p>
                     <a class="theme-btn style-6 bubble" href="{{ route('events') }}">رؤية كافة الفعاليات</a>
-                </div>
+                </div> --}}
                 <div class="col-12 col-lg-8 event-slider-wrapper">
                     <div class="home-three-review-slider">
                         @forelse ($events as $event)
@@ -553,8 +594,6 @@
                                         <p class="name-of-date m-0"> {{ $event->date }}</p>
                                     </div>
                                     <div class="content">
-                                        <h3 class="content-title"><a href="">{{ $event->name }}</a>
-                                        </h3>
                                         <div class="schedule">
                                             <div class="single-item">
                                                 <i class="fa-regular fa-clock"></i>
@@ -565,9 +604,12 @@
                                                 <p>{{ $event->location }}</p>
                                             </div>
                                         </div>
+                                        <h3 class="content-title"><a href="">{{ $event->name }}</a>
+                                        </h3>
                                     </div>
-                                    <a href="" class="button-link"><i class="fa-solid fa-arrow-right"></i></a>
+                                    {{-- <a href="" class="button-link"><i class="fa-solid fa-arrow-right"></i></a> --}}
                                 </div>
+
                             </div>
                         @empty
                         @endforelse
@@ -579,15 +621,63 @@
         </div>
     </div>
     <!-- Event Slider Area End -->
+    <!-- Team Slider Area  Start-->
+    <div class="team-slider-area style-1" id="team-slider-area">
+        <div class="banner" style="">
+            <img class="feature-item1">
+            <img class="feature-item2">
+            <img class="feature-item3">
+        </div>
+        <div class="team-slider-wrapper">
+            <div class="container">
+                <div class="section-title">
+                    <span class=" short-title">ملفات الحوكمة</span>
+                    <h2 class="title">اخر ملفات الحوكمة</h2>
+                </div>
+                <div class="team-member-slider-wrapper" id="team_slider_wrapper">
+                    @forelse ($governances as $governance)
+                        <div>
+                            <div class="team-member-card">
+
+                                <div class="image"><img style="width:277px; height:475px;"
+                                        src="{{ URL::asset($governance->image) }}" alt="team-member" />
+                                </div>
+                                <div class="content-wrapper">
+                                    <div class="content">
+                                        <a href="#" class="title">{{ $governance->name }}</a>
+                                        <p class="desc"> ملف الحوكمة</p>
+                                        <div class="social-profile-link">
+                                            <div class="social">
+                                                <div class="social-inner">
+                                                    <a href="#" tabindex="-1"><i class="fas fa-file"></i></a>
+
+                                                </div>
+                                            </div>
+                                            <div class="social-profile-btn"><i class="fas fa-plus"></i></div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    @empty
+                    @endforelse
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Team Slider Area  Start-->
 
 
 
     <!-- Blog-area Style-1 Start -->
     <div class="blog-area style-1">
-        <img class="shape-1" src="{{ URL::asset('main/images/blog/shape-1.svg') }}" alt="Shape">
-        <img class="shape-2" src="{{ URL::asset('main/images/blog/shape-2.svg') }}" alt="Shape">
-        <img class="shape-3" src="{{ URL::asset('main/images/blog/shape-3.svg') }}" alt="Shape">
-        <img class="shape-4" src="{{ URL::asset('main/images/blog/shape-4.svg') }}" alt="Shape">
+
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-6 col-12">
@@ -600,7 +690,7 @@
             </div>
             <div class="row gy-4 justify-content-md-start justify-content-lg-end">
                 @forelse ($news as $new)
-                    <div class="col-md-6 ">
+                    <div class="col-md-4 ">
                         <!-- Single Blog Card Start -->
                         <div class="blog-card">
                             <div class="image-wrapper">
@@ -619,8 +709,6 @@
                         </div>
                         <!-- Single Blog Card End -->
                     </div>
-
-
                 @empty
                 @endforelse
 
@@ -632,19 +720,18 @@
     <!-- Blog-area Style-1 End -->
 
     <!-- Testimonial Slider Area Start -->
-    <div class="testimonial-slider-area style-3" style="background-image: url('images/testimonial/bg.jpg')">
-        <img class="top-feature-icon" src="{{ URL::asset('main/images/shape/curlly3.png') }}" alt="Shape">
-        <div class="popup-video-wrapper2">
-            <div class="video-btn2" style="background-image: url('images/testimonial/play-button.svg')">
+    <div class="testimonial-slider-area style-3"
+        style="background-image: url('{{ URL::asset('main/images/testimonial/bg.jpg') }}')">
+
+        {{-- <div class="popup-video-wrapper2">
+            <div class="video-btn2" style="background-image: url('{{ URL::asset('main/images/testimonial/play-button.svg') }}')">
                 <a href="" class="mfp-iframe video-play"><i class="fa-solid fa-play" aria-hidden="true"></i></a>
             </div>
-        </div>
+        </div> --}}
         <div class="container p-0">
             <div class="row m-0">
                 <div class="col-lg-7 col-12 p-0">
                     <div class="slider-inner">
-                        <img class=" bottom-feature-icon" src="{{ URL::asset('main/images/shape/slice.png') }}"
-                            alt="Shape">
                         <div class="testimonial-slider-wrapper has-backgorund-slider style-3"
                             id="testimonial_slider-area-3">
                             @forelse ($videos as $video)
@@ -659,20 +746,23 @@
                                             </p>
                                         </a>
                                         <div class="meta-user">
-                                            <div class="user-image"><img
-                                                    src="{{ URL::asset('main/images/testimonial/user1.jpg') }}"
-                                                    alt="user" /></div>
+                                            <div class="popup-video-wrapper2">
+                                                <div class="video-btn2"
+                                                    style="background-image: url('{{ URL::asset('main/images/testimonial/play-button.svg') }}')">
+                                                    <a href="{{ $video->link }}" class="mfp-iframe video-play"><i
+                                                            class="fa-solid fa-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
                                             <div class="info">
                                                 <h2>{{ $video->date }}</h2>
-                                                <p>{{ $video->type }}</p>
+                                                <p>{{ $video->type == 'channel' ? 'قناة' : 'فيديو' }}</p>
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             @empty
                             @endforelse
-
-
                         </div>
                     </div>
                 </div>
@@ -684,19 +774,34 @@
         <div class="protfolio-inner">
             @forelse ($gallery as $image)
                 <div class="img-content-wrapper">
-                    <img class="img-wrapper" src="{{ URL::asset($image->imageUrl) }}" alt="portfolio-image">
-                    <a class="content" href="#"><i class="fa-solid fa-link-simple"></i></a>
+                    <a href="{{ URL::asset($image->imageUrl) }}" class="portfolio-item" data-magnific-popup="gallery">
+                        <img class="img-wrapper" src="{{ URL::asset($image->imageUrl) }}" alt="portfolio-image">
+                        <a class="content" href="#"><i class="fa-solid fa-link-simple"></i></a>
+                    </a>
                 </div>
             @empty
             @endforelse
         </div>
+
     </div>
+
     <div class="newsletter-area style-1">
-
         <div class="container">
-
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('.protfolio-inner').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image',
+                gallery: {
+                    enabled: true // set to true to enable gallery
+                }
+            });
+        });
+    </script>
+
 @endsection
+
 @section('js')
 @endsection

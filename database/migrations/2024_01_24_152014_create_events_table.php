@@ -12,11 +12,11 @@ class CreateEventsTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 			$table->string('name');
-			$table->enum('type', array('type1', 'type2'));
+			$table->enum('type', array('كلمة', 'درس','لقاء','معرض'));
 			$table->string('location');
 			$table->string('date');
 			$table->string('image');
-			$table->string('brive');
+			$table->text('brive');
 			$table->string('notes');
             $table->boolean('is_publish');
 		});

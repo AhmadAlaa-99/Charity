@@ -12,12 +12,12 @@ class CreateVideosTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 			$table->string('title');
-			$table->string('description');
+			$table->text('description');
 			$table->date('date');
 			$table->string('link');
 			$table->enum('type', array('channel', 'video'));
 			$table->boolean('is_publication');
-			$table->string('notes');
+			$table->text('notes');
 		});
 	}
 

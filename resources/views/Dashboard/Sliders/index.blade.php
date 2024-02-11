@@ -20,7 +20,7 @@
     <div class="container-fluid">
         <div class="row page-titles">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active"><a href="javascript:void(0)">العروض</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">عارض الصور</a></li>
                 <li class="breadcrumb-item"><a href="javascript:void(0)">كافة العروض</a></li>
             </ol>
         </div>
@@ -75,13 +75,13 @@
                                     <tr>
                                         <td><span>#{{ $i }}</span></td>
                                         <td>
-                                            <span class="text-nowrap">{{ $slider->main_title }}</span>
+                                            <span class="text-nowrap">{!! $slider->main_title !!}</span>
                                         </td>
                                         <td>
-                                            <span class="text-nowrap">{{ $slider->sub_title }}</span>
+                                            <span class="text-nowrap">{!! $slider->sub_title !!}</span>
                                         </td>
                                         <td>
-                                            <span class="text-nowrap">{{ $slider->details }}</span>
+                                            <span class="text-nowrap">{!! $slider->details !!}</span>
                                         </td>
 
                                         <td>
@@ -112,14 +112,13 @@
                                                         حذف
                                                     </a>
                                                     <form id="destroy-form-{{ $slider->id }}"
-                                                        action="{{ route('admin.sliders.destroy', $slider->id) }}" method="POST"
-                                                        style="display: none;">
+                                                        action="{{ route('admin.sliders.destroy', $slider->id) }}"
+                                                        method="POST" style="display: none;">
                                                         @method('DELETE')
                                                         @csrf
                                                     </form>
 
-                                                    <a class="dropdown-item"
-                                                        href="">
+                                                    <a class="dropdown-item" href="{{route('admin.sliders.edit',$slider->id)}}">
                                                         تعديل
                                                     </a>
 
@@ -152,58 +151,57 @@
                                     @php
                                         $i++;
                                     @endphp
-                                   <tr>
-                                    <td><span>#{{ $i }}</span></td>
-                                    <td>
-                                        <span class="text-nowrap">{{ $slider->main_title }}</span>
-                                    </td>
-                                    <td>
-                                        <span class="text-nowrap">{{ $slider->sub_title }}</span>
-                                    </td>
+                                    <tr>
+                                        <td><span>#{{ $i }}</span></td>
+                                        <td>
+                                            <span class="text-nowrap">{{ $slider->main_title }}</span>
+                                        </td>
+                                        <td>
+                                            <span class="text-nowrap">{{ $slider->sub_title }}</span>
+                                        </td>
 
-                                    <td>
-                                        <img style="width:150px; height:150px;"src="{{ URL::asset($slider->image) }}">
-                                    </td>
+                                        <td>
+                                            <img style="width:150px; height:150px;"src="{{ URL::asset($slider->image) }}">
+                                        </td>
 
-                                    <td>
-                                        <div class="dropdown">
-                                            <button type="button" class="btn btn-danger light sharp"
-                                                data-bs-toggle="dropdown">
-                                                <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
-                                                    <g stroke="none" stroke-width="1" fill="none"
-                                                        fill-rule="evenodd">
-                                                        <rect x="0" y="0" width="24" height="24"></rect>
-                                                        <circle fill="#000000" cx="5" cy="12" r="2">
-                                                        </circle>
-                                                        <circle fill="#000000" cx="12" cy="12" r="2">
-                                                        </circle>
-                                                        <circle fill="#000000" cx="19" cy="12" r="2">
-                                                        </circle>
-                                                    </g>
-                                                </svg>
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#"
-                                                    onclick="event.preventDefault();
+                                        <td>
+                                            <div class="dropdown">
+                                                <button type="button" class="btn btn-danger light sharp"
+                                                    data-bs-toggle="dropdown">
+                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
+                                                        <g stroke="none" stroke-width="1" fill="none"
+                                                            fill-rule="evenodd">
+                                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                                            <circle fill="#000000" cx="5" cy="12" r="2">
+                                                            </circle>
+                                                            <circle fill="#000000" cx="12" cy="12" r="2">
+                                                            </circle>
+                                                            <circle fill="#000000" cx="19" cy="12" r="2">
+                                                            </circle>
+                                                        </g>
+                                                    </svg>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#"
+                                                        onclick="event.preventDefault();
                                                  document.getElementById('destroy-form-{{ $slider->id }}').submit();">
-                                                    حذف
-                                                </a>
-                                                <form id="destroy-form-{{ $slider->id }}"
-                                                    action="{{ route('admin.sliders.destroy', $slider->id) }}" method="POST"
-                                                    style="display: none;">
-                                                    @method('DELETE')
-                                                    @csrf
-                                                </form>
+                                                        حذف
+                                                    </a>
+                                                    <form id="destroy-form-{{ $slider->id }}"
+                                                        action="{{ route('admin.sliders.destroy', $slider->id) }}"
+                                                        method="POST" style="display: none;">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                    </form>
 
-                                                <a class="dropdown-item"
-                                                    href="">
-                                                    تعديل
-                                                </a>
+                                                    <a class="dropdown-item" href="{{route('admin.sliders.edit',$slider->id)}}">
+                                                        تعديل
+                                                    </a>
 
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
                                 @endforeach
                                 {{ $sliders_private->links() }}
                             </tbody>

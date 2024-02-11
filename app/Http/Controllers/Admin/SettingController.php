@@ -24,7 +24,7 @@ class SettingController extends Controller
     {
         $user = Auth::user();
         $validatedData = $request->validate([
-            'username' => 'required|max:255',
+            'username' => 'required',
             'email' => 'required|email|unique:users,email,' . $user->id,
             'password' => 'confirmed',
         ]);

@@ -33,7 +33,7 @@ class NewController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
+            'title' => 'required|string',
             'brive_new' => 'required|string',
             'whole_new' => 'required|string',
             'date' => 'required|date',
@@ -71,7 +71,8 @@ class NewController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $new = News::where('id', $id)->first();
+        return view('Dashboard.News.show', compact('new'));
     }
 
     /**
@@ -88,7 +89,7 @@ class NewController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
+            'title' => 'required|string',
             'brive_new' => 'required|string',
             'whole_new' => 'required|string',
             'date' => 'required|date',

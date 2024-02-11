@@ -63,24 +63,41 @@
                     @can('شركاء النجاح')
                         <li><a href="{{ route('admin.partners.index') }}">شركاء النجاح</a></li>
                     @endcan
-                    @can('اجتماعات المجلس')
+                    @can('اجتماعا المجلس')
                         <li><a href="{{ route('admin.councils.index') }}">اجتماعات المجلس</a></li>
                     @endcan
                     @can('الحوكمة')
                         <li><a href="{{ route('admin.governances.index') }}">الحوكمة</a></li>
                     @endcan
+                    @can('روابط صديقة')
+                    <li><a href="{{ route('admin.links.index') }}">روابط صديقة</a></li>
+                @endcan
                 </ul>
             </li>
-            @can('العروض')
+            @can('عارض الصور')
                 <li>
                     <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="flaticon-045-heart"></i>
-                        <span class="nav-text">العروض</span>
+                        <span class="nav-text">عارض الصور</span>
                     </a>
                     <ul aria-expanded="false">
                         <li><a href="index.html"></a></li>
                         <li><a href="{{ route('admin.sliders.index') }}">كافة العروض</a></li>
                         <li><a href="{{ route('admin.sliders.create') }}">اضافة عرض</a></li>
+                    </ul>
+                </li>
+            @endcan
+            @can('حملات العمرة')
+                <li>
+                    <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        <i class="flaticon-022-copy"></i>
+                        <span class="nav-text">حملات العمرة</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="index.html"></a></li>
+                        <li><a href="{{ route('admin.muamtaris') }}">طلبات التسجيل</a></li>
+                        <li><a href="{{ route('admin.umrahs.index') }}">كافة الحملات</a></li>
+                        <li><a href="{{ route('admin.umrahs.create') }}">اضافة حملة</a></li>
                     </ul>
                 </li>
             @endcan
@@ -153,12 +170,12 @@
                         <span class="nav-text">عن الجمعية</span>
                     </a>
                     <ul aria-expanded="false">
-                            <li><a href="{{ route('admin.contacts.index') }}">بيانات التواصل</a></li>
-                            <li><a href="{{ route('admin.videos.index') }}">قناة الجمعية</a></li>
-                           <li><a href="{{ route('admin.images.index') }}">معرض الصور</a></li>
-                           @can('ادارة ملف الجمعية')
-                           <li><a href="{{ route('admin.charity_profile') }}">الملف التعريفي</a></li>
-                           @endcan
+                        <li><a href="{{ route('admin.contacts.index') }}">بيانات التواصل</a></li>
+                        <li><a href="{{ route('admin.videos.index') }}">قناة الجمعية</a></li>
+                        <li><a href="{{ route('admin.images.index') }}">معرض الصور</a></li>
+                        @can('ملف الجمعية')
+                            <li><a href="{{ route('admin.charity_profile') }}">الملف التعريفي</a></li>
+                        @endcan
 
                     </ul>
                 </li>

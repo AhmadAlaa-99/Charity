@@ -32,7 +32,7 @@ class SectionController extends Controller
     public function store(Request $request)
     {
         $request->validateWithBag('add', [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'email' => 'required',
             'phone' => 'required',
         ]);
@@ -74,7 +74,7 @@ class SectionController extends Controller
     public function update(Request $request, $id)
     {
         $request->validateWithBag('edit', [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'email' => 'required',
             'phone' => 'required',
         ]);

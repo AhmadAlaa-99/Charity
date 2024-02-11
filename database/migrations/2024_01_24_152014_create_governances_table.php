@@ -14,9 +14,9 @@ class CreateGovernancesTable extends Migration {
 			$table->string('date');
 			$table->string('documention');
 			$table->string('image');
-			$table->string('note');
+			$table->text('note');
 			$table->string('cost');
-            
+
 		});
 	}
 
