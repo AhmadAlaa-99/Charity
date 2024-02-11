@@ -43,16 +43,83 @@
                                             <label class="col-lg-4 col-form-label" for="validationCustom08">للنشر ؟
                                                 <span class="text-danger">*</span>
                                             </label>
-                                            <div class="col-lg-6">
-                                                <select class="default-select wide form-control" name="is_publish">
-                                                    <option data-display="Select">للنشر؟</option>
-                                                    <option value="1">نعم</option>
-                                                    <option value="0">لا</option>
-                                                </select>
+                                            <div class="col-lg-10">
+                                                <label class="switch">
+                                                    <input type="checkbox" id="is_publish" name="is_publish" value="1"
+                                                        {{ old('is_publish') ? 'checked' : '' }}>
+                                                    <span class="slider round"></span>
+                                                </label>
                                                 @error('is_publish')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
+
+                                            <style>
+                                                /* الأسلوب الخاص بمفتاح التبديل */
+                                                .switch {
+                                                    position: relative;
+                                                    display: inline-block;
+                                                    width: 60px;
+                                                    height: 34px;
+                                                    margin-top: 10px;
+                                                }
+
+                                                .switch input {
+                                                    opacity: 0;
+                                                    width: 0;
+                                                    height: 0;
+                                                }
+
+                                                .slider {
+                                                    position: absolute;
+                                                    cursor: pointer;
+                                                    top: 0;
+                                                    left: 0;
+                                                    right: 0;
+                                                    bottom: 0;
+                                                    background-color: #ccc;
+                                                    -webkit-transition: .4s;
+                                                    transition: .4s;
+                                                    height: 23px;
+
+                                                    width: 55px;
+                                                }
+
+                                                .slider:before {
+                                                    position: absolute;
+                                                    content: "";
+                                                    height: 16px;
+                                                    width: 16px;
+                                                    left: 4px;
+                                                    bottom: 4px;
+                                                    background-color: white;
+                                                    -webkit-transition: .4s;
+                                                    transition: .4s;
+                                                }
+
+                                                input:checked+.slider {
+                                                    background-color: #664543;
+                                                }
+
+                                                input:focus+.slider {
+                                                    box-shadow: 0 0 1px #2196F3;
+                                                }
+
+                                                input:checked+.slider:before {
+                                                    -webkit-transform: translateX(26px);
+                                                    -ms-transform: translateX(26px);
+                                                    transform: translateX(26px);
+                                                }
+
+                                                /* شكل مفتاح التبديل */
+                                                .slider.round {
+                                                    border-radius: 34px;
+                                                }
+
+                                                .slider.round:before {
+                                                    border-radius: 50%;
+                                                }
+                                            </style>
                                         </div>
                                     </div>
                                     <div class="col-xl-6">
@@ -185,11 +252,10 @@
             document.querySelector('#editor3').value = editor3.getData();
         });
         document.querySelector('form').addEventListener('submit', function(e) {
-    document.querySelector('textarea[name="main_title"]').value = editor1.getData();
-    document.querySelector('textarea[name="sub_title"]').value = editor2.getData();
-    document.querySelector('textarea[name="details"]').value = editor3.getData();
-});
-
+            document.querySelector('textarea[name="main_title"]').value = editor1.getData();
+            document.querySelector('textarea[name="sub_title"]').value = editor2.getData();
+            document.querySelector('textarea[name="details"]').value = editor3.getData();
+        });
     </script>
 @endsection
 @section('js')

@@ -58,11 +58,12 @@
                                             </label>
                                             <div class="col-lg-10">
                                                 <label class="switch">
-                                                    <input type="checkbox" id="is_publish" name="is_publish" value="1" {{ old('is_publish') ? 'checked' : '' }}>
+                                                    <input type="checkbox" id="is_publish" name="is_publish" value="1"
+                                                        {{ old('is_publish') ? 'checked' : '' }}>
                                                     <span class="slider round"></span>
                                                 </label>
                                                 @error('is_publish')
-                                                <div class="alert alert-danger">{{ $message }}</div>
+                                                    <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
 
@@ -93,8 +94,8 @@
                                                     -webkit-transition: .4s;
                                                     transition: .4s;
                                                     height: 23px;
-                                                    
-    width: 55px;
+
+                                                    width: 55px;
                                                 }
 
                                                 .slider:before {
@@ -109,15 +110,15 @@
                                                     transition: .4s;
                                                 }
 
-                                                input:checked + .slider {
+                                                input:checked+.slider {
                                                     background-color: #664543;
                                                 }
 
-                                                input:focus + .slider {
+                                                input:focus+.slider {
                                                     box-shadow: 0 0 1px #2196F3;
                                                 }
 
-                                                input:checked + .slider:before {
+                                                input:checked+.slider:before {
                                                     -webkit-transform: translateX(26px);
                                                     -ms-transform: translateX(26px);
                                                     transform: translateX(26px);
@@ -158,7 +159,8 @@
                                             </label>
                                             <div class="col-lg-10">
                                                 <label class="switch">
-                                                    <input type="checkbox" id="main" name="main" value="1" {{ old('main') ? 'checked' : '' }}>
+                                                    <input type="checkbox" id="main" name="main" value="1"
+                                                        {{ old('main') ? 'checked' : '' }}>
                                                     <span class="slider round"></span>
                                                 </label>
                                                 @error('main')

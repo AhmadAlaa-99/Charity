@@ -49,13 +49,13 @@
             </li>
             <li class="{{ set_active(['/']) }}">
                 <a href="{{ route('welcome') }}" class="ai-icon {{ set_active(['/']) }}" aria-expanded="false">
-                    <i class="flaticon-025-home"></i>
+                    <i class="flaticon-381-home-3"></i>
                     <span class="nav-text">الصفحة الرئيسية</span>
                 </a>
             </li>
             <li>
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                    <i class="flaticon-041-graph"></i>
+                    <i class="flaticon-381-database-1"></i>
                     <span class="nav-text">بيانات الموقع</span>
                 </a>
                 <ul aria-expanded="false">
@@ -77,7 +77,7 @@
             @can('عارض الصور')
                 <li>
                     <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                        <i class="flaticon-045-heart"></i>
+                        <i class="flaticon-381-photo-camera"></i>
                         <span class="nav-text">عارض الصور</span>
                     </a>
                     <ul aria-expanded="false">
@@ -90,7 +90,7 @@
             @can('حملات العمرة')
                 <li>
                     <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                        <i class="flaticon-022-copy"></i>
+                        <i class="flaticon-381-background-1"></i>
                         <span class="nav-text">حملات العمرة</span>
                     </a>
                     <ul aria-expanded="false">
@@ -183,7 +183,7 @@
             @can('الملف التعريفي')
                 <li>
                     <a href="{{ route('admin.profile') }}" class="ai-icon" aria-expanded="false">
-                        <i class="flaticon-381-user-9"></i>
+                        <i class="flaticon-381-user"></i>
                         <span class="nav-text">الملف التعريفي</span>
                     </a>
 

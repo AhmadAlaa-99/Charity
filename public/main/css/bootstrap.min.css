@@ -9041,7 +9041,7 @@ fieldset:disabled .btn {
 }
 
 .text-nowrap {
-    white-space: nowrap !important
+    white-space: normal !important
 }
 
 .text-break {

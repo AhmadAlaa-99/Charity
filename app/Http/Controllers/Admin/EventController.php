@@ -96,7 +96,7 @@ class EventController extends Controller
             'type' => 'required|string',
             'location' => 'required|string',
             'date' => 'required|date',
-            'image' => 'required|image',
+           // 'image' => 'required|image',
             'is_publish' => 'required|boolean',
             'brive' => 'required|string',
             'notes' => 'nullable|string',

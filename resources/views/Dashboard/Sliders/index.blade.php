@@ -75,13 +75,23 @@
                                     <tr>
                                         <td><span>#{{ $i }}</span></td>
                                         <td>
-                                            <span class="text-nowrap">{!! $slider->main_title !!}</span>
+                                            <p>
+                                                <span class="text-nowrap">{!! $slider->main_title !!}</span>
+
+                                            </p>
+
                                         </td>
                                         <td>
-                                            <span class="text-nowrap">{!! $slider->sub_title !!}</span>
+                                            <div>
+                                                <span class="text-nowrap">{!! $slider->sub_title !!}</span>
+                                            </div>
+
                                         </td>
                                         <td>
-                                            <span class="text-nowrap">{!! $slider->details !!}</span>
+                                            <p>
+                                                <span class="text-nowrap">{!! $slider->details !!}</span>
+                                            </p>
+
                                         </td>
 
                                         <td>
@@ -118,7 +128,8 @@
                                                         @csrf
                                                     </form>
 
-                                                    <a class="dropdown-item" href="{{route('admin.sliders.edit',$slider->id)}}">
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('admin.sliders.edit', $slider->id) }}">
                                                         تعديل
                                                     </a>
 
@@ -194,7 +205,8 @@
                                                         @csrf
                                                     </form>
 
-                                                    <a class="dropdown-item" href="{{route('admin.sliders.edit',$slider->id)}}">
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('admin.sliders.edit', $slider->id) }}">
                                                         تعديل
                                                     </a>
 
