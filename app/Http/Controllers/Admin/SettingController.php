@@ -45,11 +45,11 @@ class SettingController extends Controller
     {
         $validatedData = $request->validate([
             'email' => 'nullable|email',
-            'description' => 'nullable|min:100',
-            'vision' => 'nullable|min:100',
-            'message' => 'nullable|min:100',
-            'value' => 'nullable|min:100',
-            'objectives' => 'nullable|min:100',
+            'description' => 'nullable',
+            'vision' => 'nullable',
+            'message' => 'nullable',
+            'value' => 'nullable',
+            'objectives' => 'nullable',
             'logo' => 'nullable|image|mimes:png', //dimensions:min_width=100,min_height=100,max_width=500,max_height=500
         ]);
         $charity = About::first();
